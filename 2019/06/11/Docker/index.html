@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Feng&#39;s blog">
 <meta property="og:description" content="0x00前言好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！记一下最近刚接触的doker吧，把笔记知识点汇总一下。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-11T13:10:09.127Z">
+<meta property="og:updated_time" content="2019-06-12T05:18:54.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
 <meta name="twitter:description" content="0x00前言好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！记一下最近刚接触的doker吧，把笔记知识点汇总一下。">
@@ -188,6 +188,8 @@
 <br>
 <br>
 
+
+
 <h2 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h2><p><strong>搭建docker主要流程：</strong></p>
 <p><strong>找镜像(search) -&gt; 下镜像(pull) -&gt; 查看镜像(images) -&gt; 镜像中创建容器(run) -&gt; 查看容器(ps)</strong></p>
 <hr>
@@ -207,7 +209,7 @@
 <p><strong>安装时遇到的问题</strong><br>x509: certificate has expired or is not yet valid错误解决</p>
 <p>这个问题基本上是因为证书出现过期导致。</p>
 <p><strong>解决办法</strong><br>查看虚拟机和远程服务器的时间是否同步：<br>👇👇<br><code>date</code><br>若时间不同步，执行<br><code>ntpdate cn.pool.ntp.org</code><br>若安装失败 检查是否安装了ntpate<br><code>yum install ntpdate -y</code> </p>
-<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><p>1.搜索镜像<br>docker search 关键词</p>
+<h4 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h4><p>1.搜索镜像<br>docker search 关键词</p>
 <p>2.获取镜像<br>docker pull 仓库名称[:tag]</p>
 <p>3.查看镜像<br><code>docker images</code>         </p>
 <p>4.删除镜像<br><code>docker rmi [image id]</code><br><code>docker rmi [tag]</code>  //仓库名</p>
@@ -241,7 +243,7 @@
 <br>
 <br>
 
-
+<hr>
 <h2 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h2><p>docker logs errors and others</p>
 <p>遇到问题、运行不了之类的先看日志报错信息!
 <br></p>
@@ -260,10 +262,23 @@
 <br>
 <br>
 
-
 <hr>
-<p>##docker卸载</p>
-<p>查看已安装的包<br><code>yum list installed | grep docker</code></p>
+<hr>
+<br>
+
+<h2 id="进入docker-方法"><a href="#进入docker-方法" class="headerlink" title="进入docker 方法"></a>进入docker 方法</h2><ul>
+<li><p><strong>exec</strong><br><code>docker exec [names] bash</code></p>
+</li>
+<li><p><strong>nsenter</strong></p>
+</li>
+</ul>
+<p>1 . 查看容器[id]的进程的PID<br><code>docker inspect -f \{\{.State.Pid\}\} [CONTAINER ID]</code></p>
+<p>2 . 使用pid进入容器<br><code>nsenter --target $PID --mount --uts --ipc --net --pid</code><br>$PID为第一步查询到的PID</p>
+<p><a href="https://blog.csdn.net/qq_39629343/article/details/80170164" target="_blank" rel="noopener">about nsenter install</a></p>
+<br>
+
+
+<h2 id="docker卸载"><a href="#docker卸载" class="headerlink" title="docker卸载"></a>docker卸载</h2><p>查看已安装的包<br><code>yum list installed | grep docker</code></p>
 <p>删除包<br><code>yum -y remove docker-engine.x86_64</code></p>
 <hr>
 <p>推荐两个doker 搭建<a href="https://www.runoob.com/docker/docker-install-nginx.html" target="_blank" rel="noopener">nginx</a>、<a href="https://www.runoob.com/docker/docker-install-php.html" target="_blank" rel="noopener">php</a> 、mysql 的文章</p>
