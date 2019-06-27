@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,12 +17,12 @@
 
 <body>
 <div class="Shell">
-    <aside class="SideBar">
-    <section class="avatar" style="background-image: url(/assets/background.png)">
-        <div class="av-pic" style="background-image: url(/assets/header.jpg)">
+    <aside class='SideBar'>
+    <section class='avatar' style="background-image: url(/assets/background.png)">
+        <div class='av-pic' style="background-image: url(/assets/header.jpg)">
         </div>
     </section>
-    <section class="menu">
+    <section class='menu'>
         <div>Unixcs</div>
         
             <div>Be the Master of Time!</div>
@@ -51,7 +51,7 @@
         
             
                 <a href="https://github.com/unixcs">
-                    <img src="/assets/github.svg">
+                    <img src="/assets/github.svg" />
                 </a>
             
         
@@ -64,14 +64,91 @@
   
   
     <li>
-      <article class="ListView">
+      <article class='ListView'>
+    <header class="title">
+      
+        <h1>
+          <a href="/2019/06/27/宽字节注入/">宽字节注入</a>
+        </h1>
+      
+      <div class='ListMeta'>
+  <time datetime="2019-06-27T08:39:48.000Z" itemprop="datePublished">
+    2019-06-27
+  </time>
+  
+  
+</div>
+
+    </header>
+    <div>
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>如何解决 注入时 输入的  <strong><code>&#39;</code></strong> 被转义成 <strong><code>\&#39;</code></strong></p>
+<h4 id="PHP转义函数"><a href="#PHP转义函数" class="headerlink" title="PHP转义函数"></a>PHP转义函数</h4><p>addslashes，<br>mysql_real_escape_string，<br>mysql_escape_string</p>
+<h3 id="宽字节注入条件："><a href="#宽字节注入条件：" class="headerlink" title="宽字节注入条件："></a>宽字节注入条件：</h3><ol>
+<li>使用addslashes函数  (并且开启GPC)</li>
+<li>数据库编码设置为GBK   (php编码为 utf-8 或其它非GBK格式)</li>
+</ol>
+<h3 id="宽字节注入流程："><a href="#宽字节注入流程：" class="headerlink" title="宽字节注入流程："></a>宽字节注入流程：</h3><ul>
+<li>正常被转义：</li>
+</ul>
+<p><strong>‘</strong> –&gt; <strong>\‘</strong></p>
+<ul>
+<li>加%df 宽字节注入过滤:</li>
+</ul>
+<p><strong>%df’</strong> –&gt; <strong>%df%27%</strong> –&gt; <strong>%df%5c%27</strong> –&gt;  <strong>運’</strong></p>
+<p>浏览器输入 –&gt; url编码 –&gt; addslashes转义 –&gt; %df%5c被转义成汉字 <code>運</code></p>
+<h3 id="宽字节注入原理："><a href="#宽字节注入原理：" class="headerlink" title="宽字节注入原理："></a>宽字节注入原理：</h3><ul>
+<li>%df%5c 为什么会被转义成为汉字 <code>運</code> 呢？</li>
+</ul>
+<p>%df’经过addslashes编码之后带入了‘\’</p>
+<p>%df’ 就变成了 %df&#39; –&gt;  %df%5c%27 (url编码后)</p>
+<p>%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字<code>運</code> so最后输出结果为 <code>運&#39;</code></p>
+<ul>
+<li>讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?</li>
+</ul>
+<p>GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），<br>在遇到 %df(ascii(223)) &gt; ascii(128) 时自动拼接%5c，<br>因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。</p>
+
+      
+    </div>
+</article>
+
+    </li>
+  
+    <li>
+      <article class='ListView'>
+    <header class="title">
+      
+        <h1>
+          <a href="/2019/06/20/fuzz-1/">fuzz</a>
+        </h1>
+      
+      <div class='ListMeta'>
+  <time datetime="2019-06-20T14:12:36.000Z" itemprop="datePublished">
+    2019-06-20
+  </time>
+  
+  
+</div>
+
+    </header>
+    <div>
+      
+        
+      
+    </div>
+</article>
+
+    </li>
+  
+    <li>
+      <article class='ListView'>
     <header class="title">
       
         <h1>
           <a href="/2019/06/19/about study/">about study</a>
         </h1>
       
-      <div class="ListMeta">
+      <div class='ListMeta'>
   <time datetime="2019-06-19T08:53:27.000Z" itemprop="datePublished">
     2019-06-19
   </time>
@@ -95,14 +172,14 @@
     </li>
   
     <li>
-      <article class="ListView">
+      <article class='ListView'>
     <header class="title">
       
         <h1>
           <a href="/2019/06/13/Windous下Wfuzz的安装/">Windous下Wfuzz的安装</a>
         </h1>
       
-      <div class="ListMeta">
+      <div class='ListMeta'>
   <time datetime="2019-06-13T12:07:54.000Z" itemprop="datePublished">
     2019-06-13
   </time>
@@ -120,23 +197,33 @@
           </div>
         
       
-    </p></div>
+    </div>
 </article>
 
     </li>
   
     <li>
-      <article class="ListView">
+      <article class='ListView'>
     <header class="title">
       
         <h1>
           <a href="/2019/06/11/Docker/">Docker</a>
         </h1>
       
-      <div class="ListMeta">
+      <div class='ListMeta'>
   <time datetime="2019-06-11T06:21:44.000Z" itemprop="datePublished">
     2019-06-11
   </time>
+  
+  | 
+  <ul>
+    
+  <li class="meta-text">
+  { <a href="/tags/Linux/">Linux</a> }
+  </li>
+
+
+  </ul>
   
   
 </div>
@@ -157,14 +244,14 @@
     </li>
   
     <li>
-      <article class="ListView">
+      <article class='ListView'>
     <header class="title">
       
         <h1>
           <a href="/2019/06/01/about blog/">about blog</a>
         </h1>
       
-      <div class="ListMeta">
+      <div class='ListMeta'>
   <time datetime="2019-06-01T05:15:17.000Z" itemprop="datePublished">
     2019-06-01
   </time>
@@ -198,14 +285,14 @@
     </li>
   
     <li>
-      <article class="ListView">
+      <article class='ListView'>
     <header class="title">
       
         <h1>
           <a href="/2019/05/31/test/">test</a>
         </h1>
       
-      <div class="ListMeta">
+      <div class='ListMeta'>
   <time datetime="2019-05-31T14:40:31.000Z" itemprop="datePublished">
     2019-05-31
   </time>
@@ -228,14 +315,14 @@
     </li>
   
     <li>
-      <article class="ListView">
+      <article class='ListView'>
     <header class="title">
       
         <h1>
           <a href="/2018/10/28/fuzz/">Wfuzz初上手</a>
         </h1>
       
-      <div class="ListMeta">
+      <div class='ListMeta'>
   <time datetime="2018-10-27T16:00:00.000Z" itemprop="datePublished">
     2018-10-28
   </time>

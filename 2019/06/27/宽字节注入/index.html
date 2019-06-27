@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>test | Unixcs</title>
+  <title>宽字节注入 | Unixcs</title>
   
     <link rel="icon" href="/assets/2.ico">
   
@@ -63,14 +63,35 @@
             <div>
   <article class='ContentView'>
     <header class='PageTitle'>
-        <h1>test</h1>
+        <h1>宽字节注入</h1>
     </header>
 
     <section>
-      <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="测试测试"><a href="#测试测试" class="headerlink" title="测试测试"></a>测试测试</h2><ul>
-<li><code>hey!hey!hey!</code></li>
+      <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>如何解决 注入时 输入的  <strong><code>&#39;</code></strong> 被转义成 <strong><code>\&#39;</code></strong></p>
+<h4 id="PHP转义函数"><a href="#PHP转义函数" class="headerlink" title="PHP转义函数"></a>PHP转义函数</h4><p>addslashes，<br>mysql_real_escape_string，<br>mysql_escape_string</p>
+<h3 id="宽字节注入条件："><a href="#宽字节注入条件：" class="headerlink" title="宽字节注入条件："></a>宽字节注入条件：</h3><ol>
+<li>使用addslashes函数  (并且开启GPC)</li>
+<li>数据库编码设置为GBK   (php编码为 utf-8 或其它非GBK格式)</li>
+</ol>
+<h3 id="宽字节注入流程："><a href="#宽字节注入流程：" class="headerlink" title="宽字节注入流程："></a>宽字节注入流程：</h3><ul>
+<li>正常被转义：</li>
 </ul>
-<p><code>hey!hey!hey!</code></p>
+<p><strong>‘</strong> –&gt; <strong>\‘</strong></p>
+<ul>
+<li>加%df 宽字节注入过滤:</li>
+</ul>
+<p><strong>%df’</strong> –&gt; <strong>%df%27%</strong> –&gt; <strong>%df%5c%27</strong> –&gt;  <strong>運’</strong></p>
+<p>浏览器输入 –&gt; url编码 –&gt; addslashes转义 –&gt; %df%5c被转义成汉字 <code>運</code></p>
+<h3 id="宽字节注入原理："><a href="#宽字节注入原理：" class="headerlink" title="宽字节注入原理："></a>宽字节注入原理：</h3><ul>
+<li>%df%5c 为什么会被转义成为汉字 <code>運</code> 呢？</li>
+</ul>
+<p>%df’经过addslashes编码之后带入了‘\’</p>
+<p>%df’ 就变成了 %df&#39; –&gt;  %df%5c%27 (url编码后)</p>
+<p>%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字<code>運</code> so最后输出结果为 <code>運&#39;</code></p>
+<ul>
+<li>讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?</li>
+</ul>
+<p>GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），<br>在遇到 %df(ascii(223)) &gt; ascii(128) 时自动拼接%5c，<br>因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。</p>
 
 
       
@@ -80,8 +101,8 @@
       <section class='ArticleMeta'>
           <div>
             发布于&nbsp;
-            <time datetime="2019-05-31T14:40:31.000Z" itemprop="datePublished">
-              2019-05-31
+            <time datetime="2019-06-27T08:39:48.000Z" itemprop="datePublished">
+              2019-06-27
             </time>
           </div>
           
