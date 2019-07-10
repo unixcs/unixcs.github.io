@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://unixcs.com/tags/index.html</loc>
+    
+    <lastmod>2019-07-10T13:26:40.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://unixcs.com/article/2019-06-19/1/</loc>
+    
+    <lastmod>2019-07-10T12:57:58.841Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://unixcs.com/article/2019-06-13/1/</loc>
+    
+    <lastmod>2019-07-10T12:55:14.728Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://unixcs.com/article/2019-06-27/1/</loc>
     
-    <lastmod>2019-07-10T08:07:57.115Z</lastmod>
+    <lastmod>2019-07-10T12:54:45.759Z</lastmod>
     
   </url>
   
@@ -12,13 +33,6 @@
     <loc>http://unixcs.com/article/2019-06-11/1/</loc>
     
     <lastmod>2019-07-02T06:18:13.823Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://unixcs.com/tags/index.html</loc>
-    
-    <lastmod>2019-06-20T15:30:03.922Z</lastmod>
     
   </url>
   
@@ -33,20 +47,6 @@
     <loc>http://unixcs.com/about/index.html</loc>
     
     <lastmod>2019-06-20T12:23:27.150Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://unixcs.com/article/2019-06-19/1/</loc>
-    
-    <lastmod>2019-06-19T12:48:00.212Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://unixcs.com/article/2019-06-13/1/</loc>
-    
-    <lastmod>2019-06-13T12:25:10.535Z</lastmod>
     
   </url>
   
