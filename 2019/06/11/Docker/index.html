@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Docker | Unixcs</title>
+  
+    <link rel="icon" href="/assets/2.ico">
+  
+  
+  
+  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<div class="Shell">
+    <aside class='SideBar'>
+    <section class='avatar' style="background-image: url(/assets/background.png)">
+        <div class='av-pic' style="background-image: url(/assets/header.jpg)">
+        </div>
+    </section>
+    <section class='menu'>
+        <div>Unixcs</div>
+        
+            <div>Be the Master of Time!</div>
+        
+        <ul>
+          
+            <a href="/" class="Btn">
+              <li>Home</li>
+            </a>  
+          
+            <a href="/archives/" class="Btn">
+              <li>Archive</li>
+            </a>  
+          
+            <a href="/tags/" class="Btn">
+              <li>Tags</li>
+            </a>  
+          
+            <a href="/about" class="Btn">
+              <li>About</li>
+            </a>  
+          
+        </ul>
+    </section>
+    <section class="media">
+        
+            
+                <a href="https://github.com/unixcs">
+                    <img src="/assets/github.svg" />
+                </a>
+            
+        
+    </section>
+</aside>
+
+    <div class="container">
+        <div data-pager-shell>
+            <div>
+  <article class='ContentView'>
+    <header class='PageTitle'>
+        <h1>Docker</h1>
+    </header>
+
+    <section>
+      <h2 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h2><p><strong>前言</strong><br>好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！<br>记一下最近刚接触的doker吧，把笔记知识点汇总一下。</p>
+ <a id="more"></a> 
+
+
+
+
+<h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><p><strong>Dcoker 是什么？？</strong></p>
+<p><img src="https://unixcs.oss-cn-beijing.aliyuncs.com/img/docker.jpg" alt></p>
+<p>Docker的思想来自于<code>集装箱</code>，集装箱解决了什么问题？<br>在一艘大船上，可以把货物规整的摆放起来。<br>并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。<br>那么我就不需要专门运送水果的船和专门运送化学品的船了。<br>只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。</p>
+<p><a href="https://www.jianshu.com/p/8cccc39c9f1c" target="_blank" rel="noopener">https://www.jianshu.com/p/8cccc39c9f1c</a> </p>
+<h4 id="镜像（image）和容器（container）"><a href="#镜像（image）和容器（container）" class="headerlink" title="镜像（image）和容器（container）"></a>镜像（image）和容器（container）</h4><p>讲docker 之前必须要提的两个词 <strong>镜像</strong> and <strong>容器</strong></p>
+<p>那么什么是镜像？什么又是容器呢？ </p>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>通俗来讲容器就是装东西的箱子，你可以把它理解为 <strong>集装箱</strong><br>容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。</p>
+<ul>
+<li>镜像是静态的。</li>
+<li>一个镜像可以创建多个容器。</li>
+</ul>
+<h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><p>你可以把镜像看成是我们电脑的里面的 <strong>软件安装包</strong><br>Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，</p>
+<ul>
+<li>容器是动态的。</li>
+<li>镜像对于容器只是可读的。</li>
+</ul>
+<br>
+<br>
+
+
+
+<h2 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h2><p><strong>搭建docker主要流程：</strong></p>
+<p><strong>找镜像(search) -&gt; 下镜像(pull) -&gt; 查看镜像(images) -&gt; 镜像中创建容器(run) -&gt; 查看容器(ps)</strong></p>
+<hr>
+<p>我用的是centos7搭建的docker<br>检查centos版本是否支持docker</p>
+<p>1.查看内核版本 (是否大于3.10)<br><code>uname -r</code> </p>
+<p>2.安装docker<br><code>yum -y install docker</code><br>安装最新版本<br><code>yum -y install docker-ce</code><br><em>安装出现问题</em>–&gt;<a href="https://blog.csdn.net/xixiworld/article/details/71438794" target="_blank" rel="noopener">文章</a></p>
+<p>yum install  docker-ce-<version_string> (指定安装版本) </version_string></p>
+<p><code>systemctl start docker</code>     开启docker<br><code>systemctl enable docker</code>    开机启动<br><code>docker version</code>             查看docker版本号</p>
+<p>3.验证是否安装成功</p>
+<p><code>docker run hello-world</code></p>
+<blockquote>
+<p>到这里其实docker已经安装好了，但！安装好仅仅只是第一步骤；<br>后面还要下载所需的镜像或者使用dockerfile自行构建docker镜像；<br>最后再部署安装你的应用程序到docker容器中。</p>
+</blockquote>
+<br>
+
+<h2 id="一-镜像"><a href="#一-镜像" class="headerlink" title="一. 镜像"></a>一. 镜像</h2><p>下载CentOS7 镜像<br><code>docker pull centos</code></p>
+<p><strong>安装时遇到的问题</strong><br>x509: certificate has expired or is not yet valid错误解决</p>
+<p>这个问题基本上是因为证书出现过期导致。</p>
+<p><strong>解决办法</strong><br>查看虚拟机和远程服务器的时间是否同步：<br>👇👇<br><code>date</code><br>若时间不同步，执行<br><code>ntpdate cn.pool.ntp.org</code><br>若安装失败 检查是否安装了ntpate<br><code>yum install ntpdate -y</code> </p>
+<h4 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h4><p>1.搜索镜像<br>docker search 关键词</p>
+<p>2.获取镜像<br>docker pull 仓库名称[:tag]</p>
+<p>3.查看镜像<br><code>docker images</code>         </p>
+<p>4.删除镜像<br><code>docker rmi [image id]</code><br><code>docker rmi [tag]</code>  //仓库名</p>
+<blockquote>
+<p>使用 <strong>docker rmi [id]</strong> 命令时，必须确保该镜像没有被容器使用才能进行;<br>删除时系统会先删除掉指向该镜像的所有标签，然后删除镜像本身。</p>
+</blockquote>
+<p>5.存出镜像和载入镜像</p>
+<p>docker save -o 存储文件名 存储的镜像</p>
+<br>
+
+<h2 id="二-容器"><a href="#二-容器" class="headerlink" title="二.容器"></a>二.容器</h2><p>1.创建容器<br><code>docker create</code><br><code>docker run</code>        //创建并启动容器  </p>
+<p>2.查看容器<br><code>docker ps</code><br><code>docker ps -a</code>             //    查看所有docker</p>
+<p>3.启动/终止容器<br><code>docker start [names]</code><br><code>docker stop [names]</code></p>
+<p>4.删除容器     </p>
+<ul>
+<li><p>终止状态的容器<br><code>docker rm [CONTAINER ID]</code></p>
+</li>
+<li><p>正在运行的容器<br><code>docker rm -f [CONTAINER ID]</code></p>
+</li>
+</ul>
+<p>5.进入容器<br><code>docker exec -it [name] bash</code>          进入容器<br><code>docker run -i -t centos /bin/bash</code>     创建centos</p>
+<blockquote>
+<p>exec是进入已经存在的容器，run是创建新容器 </p>
+</blockquote>
+<p>5.退出容器<br><code>ctrl+d</code> 退出容器且关闭</p>
+<p><code>ctrl+p+q</code> 退出容器但不关闭</p>
+<p><code>docker kill -s HUP [容器名]</code></p>
+<blockquote>
+<p>HUP(1)是让进程挂起，睡眠;<br>kill (9)六亲不认的杀掉<br>term(15)正常的退出进程</p>
+</blockquote>
+<br>
+<br>
+
+<hr>
+<h2 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h2><p>docker logs errors and others</p>
+<p>遇到问题、运行不了之类的先看日志报错信息!
+<br></p>
+<h4 id="1-Exited-1-错误"><a href="#1-Exited-1-错误" class="headerlink" title="1. Exited (1) 错误"></a>1. Exited (1) 错误</h4><p>这个报错信息 是我在使用php镜像创建一个新的容器时出现的，当时只知道傻乎乎的的去百度搜，不知道查看docker logs 报错，导致走了很长的弯路！<br>错误原因： php的配置文件里 server 被我打成了erver ，发现这个错误的时候 我真的是想把自己揍一顿(<del>复制粘贴都能错</del>)</p>
+<p>总结：    细心细心再细心！！</p>
+<p><strong>docker los 命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker logs [OPTIONS] CONTAINER</span><br><span class="line">Options:</span><br><span class="line">        --details        显示更多的信息</span><br><span class="line">    -f, --follow         跟踪实时日志</span><br><span class="line">        --since string   显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）</span><br><span class="line">        --tail string    从日志末尾显示多少行日志， 默认是all</span><br><span class="line">    -t, --timestamps     显示时间戳</span><br><span class="line">        --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="2-配置没问题，访问搭建的nginx不成功"><a href="#2-配置没问题，访问搭建的nginx不成功" class="headerlink" title="2. 配置没问题，访问搭建的nginx不成功"></a>2. 配置没问题，访问搭建的nginx不成功</h4><p>错误原因：</p>
+<p>重启下dockers<br>systemctl restart docker<br>重启容器<br>docker restart [name]</p>
+<p>再次访问<br>success！</p>
+<br>
+<br>
+<br>
+<br>
+
+<hr>
+<hr>
+<br>
+
+<h2 id="进入docker-方法"><a href="#进入docker-方法" class="headerlink" title="进入docker 方法"></a>进入docker 方法</h2><ul>
+<li><p><strong>exec</strong><br><code>docker exec [names] bash</code></p>
+</li>
+<li><p><strong>nsenter</strong></p>
+</li>
+</ul>
+<p>1 . 查看容器[id]的进程的PID<br><code>docker inspect -f \{\{.State.Pid\}\} [CONTAINER ID]</code></p>
+<p>2 . 使用pid进入容器<br><code>nsenter --target $PID --mount --uts --ipc --net --pid</code><br>$PID为第一步查询到的PID</p>
+<p><a href="https://blog.csdn.net/qq_39629343/article/details/80170164" target="_blank" rel="noopener">about nsenter install</a></p>
+<br>
+
+
+<h2 id="docker卸载"><a href="#docker卸载" class="headerlink" title="docker卸载"></a>docker卸载</h2><p>查看已安装的包<br><code>yum list installed | grep docker</code></p>
+<p>删除包<br><code>yum -y remove docker-engine.x86_64</code></p>
+<hr>
+<p>推荐两个doker 搭建<a href="https://www.runoob.com/docker/docker-install-nginx.html" target="_blank" rel="noopener">nginx</a>、<a href="https://www.runoob.com/docker/docker-install-php.html" target="_blank" rel="noopener">php</a> 、mysql 的文章</p>
+<p>参考：<a href="https://blog.51cto.com/11134648/2160257" target="_blank" rel="noopener">https://blog.51cto.com/11134648/2160257</a></p>
+
+
+      
+
+    </section>
+    
+      <section class='ArticleMeta'>
+          <div>
+            发布于&nbsp;
+            <time datetime="2019-06-11T06:21:44.000Z" itemprop="datePublished">
+              2019-06-11
+            </time>
+          </div>
+          
+            <div>
+              tags: 
+  <li class="meta-text">
+  { <a href="/tags/Linux/">Linux</a> }
+  </li>
+
+
+            </div>
+          
+      </section>
+    
+    
+</article>
+
+  
+</div>
+
+            <footer>
+    <div>© 2019 - Unixcs </div>
+    <div>
+        <span>
+
+        </span>
+        <span>
+
+        </span>
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+<script src="/js/pager/dist/singlepager.js"></script>
+<script>
+var sp = new Pager('data-pager-shell')
+
+</script>
+</body>
+</html>
