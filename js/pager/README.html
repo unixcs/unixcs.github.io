@@ -10,7 +10,7 @@
 
 <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"singlepager.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
 <span class="tag">&lt;<span class="name">script</span>&gt;</span>
-  var sp = new Pager('data-pager-shell')
+<span class="actionscript">  <span class="keyword">var</span> sp = <span class="keyword">new</span> Pager(<span class="string">'data-pager-shell'</span>)</span>
 <span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
 <p>The parameter of construct could be an attribute name string, or a configure object.</p>
 <pre><code class="typescript"><span class="keyword">interface</span> PagerConfig {
@@ -37,15 +37,15 @@
   ...
   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tag"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
   <span class="tag">&lt;<span class="name">script</span>&gt;</span>
-<span class="xml">    document.getElementById('tag').innerHTML += '<span class="tag">&lt;<span class="name">p</span>&gt;</span>Run after mount<span class="tag">&lt;/<span class="name">p</span>&gt;</span>'</span>
+<span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">'tag'</span>).innerHTML += <span class="string">'&lt;p&gt;Run after mount&lt;/p&gt;'</span></span>
   <span class="tag">&lt;/<span class="name">script</span>&gt;</span>
   <span class="tag">&lt;<span class="name">script</span> <span class="attr">data-run-before</span>&gt;</span>
-    // Error!
-<span class="xml">    // document.getElementById('tag').innerHTML += '<span class="tag">&lt;<span class="name">p</span>&gt;</span>Run before mount<span class="tag">&lt;/<span class="name">p</span>&gt;</span>'</span>
-    alert('Run before mount')
+<span class="actionscript">    <span class="comment">// Error!</span></span>
+<span class="handlebars"><span class="xml">    // document.getElementById('tag').innerHTML += '<span class="tag">&lt;<span class="name">p</span>&gt;</span>Run before mount<span class="tag">&lt;/<span class="name">p</span>&gt;</span>'</span></span>
+<span class="actionscript">    alert(<span class="string">'Run before mount'</span>)</span>
   <span class="tag">&lt;/<span class="name">script</span>&gt;</span>
   <span class="tag">&lt;<span class="name">script</span> <span class="attr">data-pager-disabled</span>&gt;</span>
-    alert('Do not run this')
+<span class="actionscript">    alert(<span class="string">'Do not run this'</span>)</span>
   <span class="tag">&lt;/<span class="name">script</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
 </code></pre>

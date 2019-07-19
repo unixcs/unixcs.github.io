@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://unixcs.com/article/2019-06-11/1/</loc>
+    
+    <lastmod>2019-07-19T07:45:23.169Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://unixcs.com/about/index.html</loc>
     
     <lastmod>2019-07-10T13:41:37.991Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://unixcs.com/article/2019-06-27/1/</loc>
     
     <lastmod>2019-07-10T12:54:45.759Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://unixcs.com/article/2019-06-11/1/</loc>
-    
-    <lastmod>2019-07-02T06:18:13.823Z</lastmod>
     
   </url>
   
