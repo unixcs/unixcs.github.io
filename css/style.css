@@ -370,18 +370,22 @@ figure.highlight {
   overflow-x: auto;
 }
 .highlight > table {
+  background: #f2f2f2;
   width: 100%;
 }
 figure.highlight,
 .code,
 code {
   font-family: Monaco, Menlo, Consolas, 'Microsoft Yahei', monospace;
-  font-size: 13px;
+  background: #eee;
+  color: #f14e32;
+  font-size: 14px;
   margin: auto 5px;
 }
 figure.highlight pre,
 .code pre,
 code pre {
+  color: #4a4a4a;
   margin: auto;
   overflow-x: auto;
   font-family: inherit;

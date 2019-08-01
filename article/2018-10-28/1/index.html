@@ -79,8 +79,9 @@
 <h2 id="Wfuzz初体验"><a href="#Wfuzz初体验" class="headerlink" title="Wfuzz初体验"></a>Wfuzz初体验</h2><ul>
 <li>安装Wfuzz <code>pip install wfuzz</code></li>
 </ul>
-<h3 id="简单的使用"><a href="#简单的使用" class="headerlink" title="简单的使用"></a>简单的使用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w 字典 地址(e.g. https://gh0st.cn/FUZZ)</span><br></pre></td></tr></table></figure>
-
+<h3 id="简单的使用"><a href="#简单的使用" class="headerlink" title="简单的使用"></a>简单的使用</h3><blockquote>
+<p>wfuzz -w 字典 地址(e.g. <a href="https://gh0st.cn/FUZZ" target="_blank" rel="noopener">https://gh0st.cn/FUZZ</a>)</p>
+</blockquote>
 <p>如上命令使用-w参数指定字典位置，然后跟上一个要测试的地址，所列的例子<code>https://gh0st.cn/FUZZ</code>中有一个<strong>FUZZ</strong>单词，这个单词可以理解是一个占位符，这样就大概了解了wfuzz的基本运行原理，它会读取字典然后传入占位符进行模糊测试请求。</p>
 <p>实际的使用一遍：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w test_dict.txt https://gh0st.cn/FUZZ</span><br></pre></td></tr></table></figure>
@@ -213,6 +214,29 @@
           
       </section>
     
+    
+      <section>
+        <div id="disqus_thread"></div>
+        <script>
+          window.disqus_config = function () {
+            this.page.url = window.location.toString()
+            this.page.identifier = window.location.pathname
+          }
+          if (typeof DISQUS === 'undefined') {
+            (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          } else {
+            DISQUS.reset({
+                reload: true,
+                config: window.disqus_config
+            })
+          }
+        </script>
+      </section>
     
 </article>
 
