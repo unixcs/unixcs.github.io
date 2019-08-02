@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://unixcs.com/article/2019-08-02/1/</loc>
+    
+    <lastmod>2019-08-02T04:04:35.624Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://unixcs.com/tags/index.html</loc>
+    
+    <lastmod>2019-08-02T03:30:14.784Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://unixcs.com/article/2018-10-28/1/</loc>
     
     <lastmod>2019-08-01T16:23:47.686Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://unixcs.com/about/index.html</loc>
     
     <lastmod>2019-07-10T13:41:37.991Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://unixcs.com/tags/index.html</loc>
-    
-    <lastmod>2019-07-10T13:40:21.048Z</lastmod>
     
   </url>
   
