@@ -66,14 +66,25 @@
         <h1>Docker</h1>
     </header>
 
+<!--    <aside id="article-toc" role="navigation" class="fixed">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">
+        目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">0x00</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">0x01</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">镜像（image）和容器（container）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">镜像</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">0x02</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">一. 镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">镜像命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">二.容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">0x03</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">1. Exited (1) 错误</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">2. 配置没问题，访问搭建的nginx不成功</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">进入docker 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">docker卸载</span></a></li></ol>
+    </div>
+</aside>  -->
+<!--    目录  -->
+
+
     <section>
-      <h2 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h2><p><strong>前言</strong><br>好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！<br>记一下最近刚接触的doker吧，把笔记知识点汇总一下。</p>
+
+     <h2><span id="0x00">0x00</span></h2><p><strong>前言</strong><br>好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！<br>记一下最近刚接触的doker吧，把笔记知识点汇总一下。</p>
  <a id="more"></a> 
 
 
 
 
-<h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><p><strong>Dcoker 是什么？？</strong></p>
+<h2><span id="0x01">0x01</span></h2><p><strong>Dcoker 是什么？？</strong></p>
 <p><img src="https://unixcs.oss-cn-beijing.aliyuncs.com/img/docker.jpg" alt></p>
 <p>Docker的思想来自于<code>集装箱</code>，集装箱解决了什么问题？<br>在一艘大船上，可以把货物规整的摆放起来。<br>并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。<br>那么我就不需要专门运送水果的船和专门运送化学品的船了。<br>只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。</p>
 <br>
@@ -86,14 +97,14 @@
 <br>
 <br>
 
-<h4 id="镜像（image）和容器（container）"><a href="#镜像（image）和容器（container）" class="headerlink" title="镜像（image）和容器（container）"></a>镜像（image）和容器（container）</h4><p>讲docker 之前必须要提的两个词 <strong>镜像</strong> and <strong>容器</strong></p>
+<h4><span id="镜像image和容器container">镜像（image）和容器（container）</span></h4><p>讲docker 之前必须要提的两个词 <strong>镜像</strong> and <strong>容器</strong></p>
 <p>那么什么是镜像？什么又是容器呢？ </p>
-<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>通俗来讲容器就是装东西的箱子，你可以把它理解为 <strong>集装箱</strong><br>容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。</p>
+<h4><span id="容器">容器</span></h4><p>通俗来讲容器就是装东西的箱子，你可以把它理解为 <strong>集装箱</strong><br>容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。</p>
 <ul>
 <li>镜像是静态的。</li>
 <li>一个镜像可以创建多个容器。</li>
 </ul>
-<h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><p>你可以把镜像看成是我们电脑的里面的 <strong>软件安装包</strong><br>Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，</p>
+<h4><span id="镜像">镜像</span></h4><p>你可以把镜像看成是我们电脑的里面的 <strong>软件安装包</strong><br>Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，</p>
 <ul>
 <li>容器是动态的。</li>
 <li>镜像对于容器只是可读的。</li>
@@ -103,7 +114,7 @@
 
 
 
-<h2 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h2><p><strong>搭建docker主要流程：</strong></p>
+<h2><span id="0x02">0x02</span></h2><p><strong>搭建docker主要流程：</strong></p>
 <p><strong>找镜像(search) -&gt; 下镜像(pull) -&gt; 查看镜像(images) -&gt; 镜像中创建容器(run) -&gt; 查看容器(ps)</strong></p>
 <hr>
 <p>我用的是centos7搭建的docker<br>检查centos版本是否支持docker</p>
@@ -118,11 +129,11 @@
 </blockquote>
 <br>
 
-<h2 id="一-镜像"><a href="#一-镜像" class="headerlink" title="一. 镜像"></a>一. 镜像</h2><p>下载CentOS7 镜像<br><code>docker pull centos</code></p>
+<h2><span id="一-镜像">一. 镜像</span></h2><p>下载CentOS7 镜像<br><code>docker pull centos</code></p>
 <p><strong>安装时遇到的问题</strong><br>x509: certificate has expired or is not yet valid错误解决</p>
 <p>这个问题基本上是因为证书出现过期导致。</p>
 <p><strong>解决办法</strong><br>查看虚拟机和远程服务器的时间是否同步：<br>👇👇<br><code>date</code><br>若时间不同步，执行<br><code>ntpdate cn.pool.ntp.org</code><br>若安装失败 检查是否安装了ntpate<br><code>yum install ntpdate -y</code> </p>
-<h4 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h4><p>1.搜索镜像<br>docker search 关键词</p>
+<h4><span id="镜像命令">镜像命令</span></h4><p>1.搜索镜像<br>docker search 关键词</p>
 <p>2.获取镜像<br>docker pull 仓库名称[:tag]</p>
 <p>3.查看镜像<br><code>docker images</code>         </p>
 <p>4.删除镜像<br><code>docker rmi [image id]</code><br><code>docker rmi [tag]</code>  //仓库名</p>
@@ -133,7 +144,7 @@
 <p>docker save -o 存储文件名 存储的镜像</p>
 <br>
 
-<h2 id="二-容器"><a href="#二-容器" class="headerlink" title="二.容器"></a>二.容器</h2><p>1.创建容器<br><code>docker create</code><br><code>docker run</code>        //创建并启动容器  </p>
+<h2><span id="二容器">二.容器</span></h2><p>1.创建容器<br><code>docker create</code><br><code>docker run</code>        //创建并启动容器  </p>
 <p>2.查看容器<br><code>docker ps</code><br><code>docker ps -a</code>             //    查看所有docker</p>
 <p>3.启动/终止容器<br><code>docker start [names]</code><br><code>docker stop [names]</code></p>
 <p>4.删除容器     </p>
@@ -157,17 +168,17 @@
 <br>
 
 <hr>
-<h2 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h2><p>docker logs errors and others</p>
+<h2><span id="0x03">0x03</span></h2><p>docker logs errors and others</p>
 <p>遇到问题、运行不了之类的先看日志报错信息!
 <br></p>
-<h4 id="1-Exited-1-错误"><a href="#1-Exited-1-错误" class="headerlink" title="1. Exited (1) 错误"></a>1. Exited (1) 错误</h4><p>这个报错信息 是我在使用php镜像创建一个新的容器时出现的，当时只知道傻乎乎的的去百度搜，不知道查看docker logs 报错，导致走了很长的弯路！<br>错误原因： php的配置文件里 server 被我打成了erver ，发现这个错误的时候 我真的是想把自己揍一顿(<del>复制粘贴都能错</del>)</p>
+<h4><span id="1-exited-1-错误">1. Exited (1) 错误</span></h4><p>这个报错信息 是我在使用php镜像创建一个新的容器时出现的，当时只知道傻乎乎的的去百度搜，不知道查看docker logs 报错，导致走了很长的弯路！<br>错误原因： php的配置文件里 server 被我打成了erver ，发现这个错误的时候 我真的是想把自己揍一顿(<del>复制粘贴都能错</del>)</p>
 <p>总结：    细心细心再细心！！</p>
 <p><strong>docker los 命令</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker logs [OPTIONS] CONTAINER</span><br><span class="line">Options:</span><br><span class="line">        --details        显示更多的信息</span><br><span class="line">    -f, --follow         跟踪实时日志</span><br><span class="line">        --since string   显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）</span><br><span class="line">        --tail string    从日志末尾显示多少行日志， 默认是all</span><br><span class="line">    -t, --timestamps     显示时间戳</span><br><span class="line">        --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）</span><br></pre></td></tr></table></figure>
 
 <br>
 
-<h4 id="2-配置没问题，访问搭建的nginx不成功"><a href="#2-配置没问题，访问搭建的nginx不成功" class="headerlink" title="2. 配置没问题，访问搭建的nginx不成功"></a>2. 配置没问题，访问搭建的nginx不成功</h4><p>错误原因：</p>
+<h4><span id="2-配置没问题访问搭建的nginx不成功">2. 配置没问题，访问搭建的nginx不成功</span></h4><p>错误原因：</p>
 <p>重启下dockers<br>systemctl restart docker<br>重启容器<br>docker restart [name]</p>
 <p>再次访问<br>success！</p>
 <br>
@@ -179,7 +190,7 @@
 <hr>
 <br>
 
-<h2 id="进入docker-方法"><a href="#进入docker-方法" class="headerlink" title="进入docker 方法"></a>进入docker 方法</h2><ul>
+<h2><span id="进入docker-方法">进入docker 方法</span></h2><ul>
 <li><p><strong>exec</strong><br><code>docker exec [names] bash</code></p>
 </li>
 <li><p><strong>nsenter</strong></p>
@@ -191,7 +202,7 @@
 <br>
 
 
-<h2 id="docker卸载"><a href="#docker卸载" class="headerlink" title="docker卸载"></a>docker卸载</h2><p>查看已安装的包<br><code>yum list installed | grep docker</code></p>
+<h2><span id="docker卸载">docker卸载</span></h2><p>查看已安装的包<br><code>yum list installed | grep docker</code></p>
 <p>删除包<br><code>yum -y remove docker-engine.x86_64</code></p>
 <hr>
 <p>推荐两个doker 搭建<a href="https://www.runoob.com/docker/docker-install-nginx.html" target="_blank" rel="noopener">nginx</a>、<a href="https://www.runoob.com/docker/docker-install-php.html" target="_blank" rel="noopener">php</a> 、mysql 的文章</p>
@@ -244,6 +255,7 @@
           }
         </script>
       </section>
+    
     
 </article>
 
