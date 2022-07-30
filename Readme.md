@@ -1,2 +1,2 @@
 # My Blog
-http://unixcs.co/
+http://unixcs.github.io/
