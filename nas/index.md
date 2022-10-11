@@ -1,3 +1,3 @@
 <script type="text/javascript">
-    window.location.href = "http://fengx.eu.cn:81";
+    window.location.href = "http://fengx.eu.org:81";
 </script>
