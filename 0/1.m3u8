@@ -61,11 +61,11 @@ http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000267
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000266
 #EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/liaoning.png",辽宁卫视高清
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000472
-#EXTINF:-1 group-title="地方" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jinyingjishi.png",金鹰纪实高清
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jinyingjishi.png",金鹰纪实高清
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000569
 #EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongnan.png",东南卫视高清
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000588
-#EXTINF:-1 group-title="未分类",综艺频道
+#EXTINF:-1 group-title="卫视",综艺频道
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000008
 #EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sichuan.png",四川卫视
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000069
@@ -107,21 +107,21 @@ http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000244
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000462
 #EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png",CGTN
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000148
-#EXTINF:-1 group-title="北京" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/kaku.png",卡酷动画
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/kaku.png",卡酷动画
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000150
 #EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png",金鹰卡通
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000151
-#EXTINF:-1 group-title="地方" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jiajiakt.png",嘉佳卡通
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jiajiakt.png",嘉佳卡通
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000448
-#EXTINF:-1 group-title="地方",CETV1
+#EXTINF:-1 group-title="卫视",CETV1
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000463
-#EXTINF:-1 group-title="地方",CETV2
+#EXTINF:-1 group-title="卫视",CETV2
 http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000251
-#EXTINF:-1 group-title="地方",CETV4
+#EXTINF:-1 group-title="卫视",CETV4
 http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000252
-#EXTINF:-1 group-title="地方",山东教育
+#EXTINF:-1 group-title="卫视",山东教育
 http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000248
-#EXTINF:-1 group-title="地方" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/财富天下.png",财富天下
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/财富天下.png",财富天下
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000183
 #EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sansha.png",三沙卫视
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000589
