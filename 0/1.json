@@ -113,13 +113,13 @@ http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000150
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000151
 #EXTINF:-1 group-title="地方" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jiajiakt.png",嘉佳卡通
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000448
-#EXTINF:-1 group-title="未分类",CETV1
+#EXTINF:-1 group-title="地方",CETV1
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000463
-#EXTINF:-1 group-title="未分类",CETV2
+#EXTINF:-1 group-title="地方",CETV2
 http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000251
-#EXTINF:-1 group-title="未分类",CETV4
+#EXTINF:-1 group-title="地方",CETV4
 http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000252
-#EXTINF:-1 group-title="未分类",山东教育
+#EXTINF:-1 group-title="地方",山东教育
 http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000248
 #EXTINF:-1 group-title="地方" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/财富天下.png",财富天下
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000183
@@ -151,9 +151,10 @@ https://epg.112114.xyz/douyu/882513
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202002/bdc3b91e6e7b43f681130ce5d5c7f601_middle.jpg" group-title="天天象棋",象棋仓老师
 https://epg.112114.xyz/douyu/8122333
 
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="一起看",进击の神乐
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰成龙
 https://epg.112114.xyz/douyu/122402
-
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",华语经典
+https://epg.112114.xyz/douyu/85894
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="英雄联盟",英雄联盟赛事
 https://epg.112114.xyz/douyu/288016
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/117fa2e8b03b4a8080141afc4c3beffe_middle.jpg" group-title="英雄联盟",英雄联盟赛事2
@@ -162,3 +163,7 @@ https://epg.112114.xyz/douyu/424559
 https://epg.112114.xyz/douyu/12313
 #EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="英雄联盟", 八路奶粉
 http://live.aptvapp.com/live/huya/651343
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="英雄联盟", 舟
+http://live.aptvapp.com/live/huya/39300
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="英雄联盟", QQ飞车
+http://live.aptvapp.com/live/huya/speed
