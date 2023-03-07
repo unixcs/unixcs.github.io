@@ -127,6 +127,7 @@ http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000183
 http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000589
 
 
+
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201708/09/09/f735ddc6b1aabee62b060d9b821dc600_middle.jpg" group-title="天天象棋",八卦象棋大师
 https://epg.112114.xyz/douyu/851040
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202004/0c898b1f6c714c308d390f6c067f343f_middle.jpg" group-title="天天象棋",帽子戏法Chess
@@ -150,7 +151,14 @@ https://epg.112114.xyz/douyu/882513
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202002/bdc3b91e6e7b43f681130ce5d5c7f601_middle.jpg" group-title="天天象棋",象棋仓老师
 https://epg.112114.xyz/douyu/8122333
 
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="一起看",进击の神乐
+https://epg.112114.xyz/douyu/122402
+
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="英雄联盟",英雄联盟赛事
 https://epg.112114.xyz/douyu/288016
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/117fa2e8b03b4a8080141afc4c3beffe_middle.jpg" group-title="英雄联盟",英雄联盟赛事2
 https://epg.112114.xyz/douyu/424559
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="英雄联盟",叶音符
+https://epg.112114.xyz/douyu/12313
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="英雄联盟", 八路奶粉
+http://live.aptvapp.com/live/huya/651343
