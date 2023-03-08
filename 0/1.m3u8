@@ -164,22 +164,10 @@ https://epg.112114.xyz/douyu/961386
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",德爷
 https://epg.112114.xyz/douyu/454867
 
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",开心麻花小品
-https://epg.112114.xyz/douyu/10153463
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",赵本山小品
-https://epg.112114.xyz/douyu/9817716
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",经典小品
-https://epg.112114.xyz/douyu/9067836
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",华语经典
-https://epg.112114.xyz/douyu/85894
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰成龙
-https://epg.112114.xyz/douyu/122402
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",漫威电影
-https://epg.112114.xyz/douyu/6140589
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",豆瓣高分电影
-https://epg.112114.xyz/douyu/8770422
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",三国
-https://epg.112114.xyz/douyu/10946883
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",百家讲坛
+http://live.aptvapp.com/live/huya/11602032
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",天龙八部
+https://epg.112114.xyz/douyu/7280583
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",龙门镖局
 https://epg.112114.xyz/douyu/9650860
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",倚天屠龙记
@@ -188,12 +176,12 @@ http://live.aptvapp.com/live/huya/11342403
 http://live.aptvapp.com/live/huya/11602072
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",铁齿铜牙纪晓岚
 http://live.aptvapp.com/live/huya/11342396
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",康熙微服私访
+http://live.aptvapp.com/live/huya/7550220
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",风云
 https://epg.112114.xyz/douyu/9290755
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",大秦赋
 https://epg.112114.xyz/douyu/1584198
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰
-http://live.aptvapp.com/live/huya/11342412
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",神探狄仁杰
 http://live.aptvapp.com/live/huya/11342425
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",雍正王朝
@@ -202,6 +190,25 @@ http://live.aptvapp.com/live/huya/11342439
 http://live.aptvapp.com/live/huya/11601978
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",韦小宝
 http://live.aptvapp.com/live/huya/23865080
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",三国
+https://epg.112114.xyz/douyu/10946883
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",赵本山小品
+https://epg.112114.xyz/douyu/9817716
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",经典小品
+https://epg.112114.xyz/douyu/9067836
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",开心麻花小品
+https://epg.112114.xyz/douyu/10153463
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",华语经典
+https://epg.112114.xyz/douyu/85894
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰
+http://live.aptvapp.com/live/huya/11342412
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰成龙
+https://epg.112114.xyz/douyu/122402
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",漫威电影
+https://epg.112114.xyz/douyu/6140589
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",豆瓣高分电影
+https://epg.112114.xyz/douyu/8770422
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",盗墓
 http://live.aptvapp.com/live/huya/11352871
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",达叔
@@ -210,8 +217,6 @@ http://live.aptvapp.com/live/huya/11336592
 http://live.aptvapp.com/live/huya/11601968
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",张卫健
 http://live.aptvapp.com/live/huya/23728660
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",百家讲坛
-http://live.aptvapp.com/live/huya/11602032
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",权力的游戏
 https://epg.112114.xyz/douyu/8945323
 
@@ -228,10 +233,14 @@ https://epg.112114.xyz/douyu/2250349
 https://epg.112114.xyz/douyu/7888428
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",小当家
 http://live.aptvapp.com/live/huya/24257300
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",七龙珠
+http://live.aptvapp.com/live/huya/11601966
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",成龙历险记
 http://live.aptvapp.com/live/huya/11352946
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",蓝胖子
 http://live.aptvapp.com/live/huya/11601963
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",经典动漫
+https://epg.112114.xyz/douyu/6610883
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",陈翔六点半
 https://epg.112114.xyz/douyu/2132902
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",小片片说大篇
@@ -249,7 +258,11 @@ http://live.aptvapp.com/live/huya/lpl
 https://epg.112114.xyz/douyu/12313
 #EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", 八路奶粉
 http://live.aptvapp.com/live/huya/651343
-#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", 舟
-http://live.aptvapp.com/live/huya/39300
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",叶音符
+https://epg.112114.xyz/douyu/39300
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",辣条
+https://epg.112114.xyz/douyu/81866
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",大司马
+https://epg.112114.xyz/douyu/606118
 #EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", QQ飞车
 http://live.aptvapp.com/live/huya/speed
