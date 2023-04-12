@@ -325,6 +325,12 @@ https://epg.112114.xyz/douyu/12313
 http://live.aptvapp.com/live/huya/651343
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",舟
 https://epg.112114.xyz/douyu/39300
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",西瓜
+https://epg.112114.xyz/douyu/103997
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",大师兄
+https://epg.112114.xyz/douyu/888388
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",小浩
+https://epg.112114.xyz/douyu/554011
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",辣条
 https://epg.112114.xyz/douyu/81866
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",大司马
@@ -333,3 +339,4 @@ https://epg.112114.xyz/douyu/606118
 http://live.aptvapp.com/live/huya/speed
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",严斌
 https://epg.112114.xyz/douyu/5047677
+
