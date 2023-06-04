@@ -1,0 +1,352 @@
+#EXTM3U
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png",CCTV-1综合
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000152
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png",CCTV-2财经
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000477
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png",CCTV-3综艺
+http://[2409:8087:2001:20:2800:0:df6e:eb18]:80/wh7f454c46tw1926180487_-439218358/ott.mobaibox.com/PLTV/3/224/3221228126/index.m3u8
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png",CCTV-4中文国际
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000573
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV5.png",CCTV-5体育
+http://[2409:8087:2001:20:2800:0:df6e:eb11]:80/wh7f454c46tw87480947_-1225841912/ott.mobaibox.com/PLTV/3/224/3221228179/index.m3u8
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV5+.png",CCTV-5+体育赛事
+http://[2409:8087:2001:20:2800:0:df6e:eb17]:80/wh7f454c46tw90393969_1500887054/ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV6.png",CCTV-6电影
+http://[2409:8087:2001:20:2800:0:df6e:eb15]:80/wh7f454c46tw92219307_2093744544/ott.mobaibox.com/PLTV/3/224/3221228123/index.m3u8
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV7.png",CCTV-7军事
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000485
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV8.png",CCTV-8电视剧
+http://[2409:8087:2001:20:2800:0:df6e:eb1a]:80/wh7f454c46tw94952617_-1280969877/ott.mobaibox.com/PLTV/3/224/3221228194/index.m3u8
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV9.png",CCTV-9记录
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000478
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV10.png",CCTV-10科教
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000480
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV11.png",CCTV-11戏曲
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000583
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV12.png",CCTV-12社会与法
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000482
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png",CCTV-13新闻
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000602
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png",CCTV-14少儿
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000483
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png",CCTV-15音乐
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000587
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png",CCTV-17高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000580
+#EXTINF:-1,tvg-id="风云剧场" tvg-name="风云剧场" tvg-logo="http://192.168.2.169:35455/logo/风云剧场.png" group-title="央视",CCTV风云剧场高清
+http://118.24.227.124/__cl/cg:live/__c/fyjcHD/__op/default/__f/index.m3u8
+#EXTINF:-1,tvg-id="风云音乐" tvg-name="风云音乐" tvg-logo="http://192.168.2.169:35455/logo/风云音乐.png" group-title="央视",CCTV风云音乐高清
+http://118.24.227.124/__cl/cg:live/__c/fyyyHD/__op/default/__f/index.m3u8
+#EXTINF:-1,tvg-id="风云足球" tvg-name="风云足球" tvg-logo="http://192.168.2.169:35455/logo/风云足球.png" group-title="央视",CCTV风云足球高清
+http://118.24.227.124/__cl/cg:live/__c/fyzqHD/__op/default/__f/index.m3u8
+#EXTINF:-1,tvg-id="怀旧剧场" tvg-name="怀旧剧场" tvg-logo="http://192.168.2.169:35455/logo/怀旧剧场.png" group-title="央视",CCTV怀旧剧场高清
+http://118.24.227.124/__cl/cg:live/__c/hjjcHD/__op/default/__f/index.m3u8
+#EXTINF:-1,tvg-id="第一剧场" tvg-name="第一剧场" tvg-logo="http://192.168.2.169:35455/logo/第一剧场.png" group-title="央视",CCTV第一剧场高清
+http://118.24.227.124/__cl/cg:live/__c/diyijuchangHD/__op/default/__f/index.m3u8
+#EXTINF:-1,tvg-id="兵器科技" tvg-name="兵器科技" tvg-logo="http://192.168.2.169:35455/logo/兵器科技.png" group-title="央视",CCTV兵器科技高清
+http://118.24.227.124/__cl/cg:live/__c/bqkjHD/__op/default/__f/index.m3u8
+
+#EXTINF:-1 group-title="央视",NewTV超级电影
+http://39.135.138.58:18890/PLTV/88888888/224/3221225623/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV超级体育
+http://39.135.138.58:18890/PLTV/88888888/224/3221225622/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV超级体育
+http://39.135.138.58:18890/PLTV/88888888/224/3221225767/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV超级综艺
+http://39.135.138.58:18890/PLTV/88888888/224/3221225620/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV潮妈辣婆
+http://39.135.138.58:18890/PLTV/88888888/224/3221225708/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV东北热剧
+http://39.135.138.58:18890/PLTV/88888888/224/3221226202/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV古装剧场
+http://39.135.138.58:18890/PLTV/88888888/224/3221225678/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV热播精选
+http://39.135.138.58:18890/PLTV/88888888/224/3221225712/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV怡伴健康
+http://39.135.138.58:18890/PLTV/88888888/224/3221225666/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV军旅剧场
+http://39.135.138.58:18890/PLTV/88888888/224/3221225669/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV精品大剧
+http://39.135.138.58:18890/PLTV/88888888/224/3221225714/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV精品纪录
+http://39.135.138.58:18890/PLTV/88888888/224/3221225710/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV精品体育
+http://39.135.138.58:18890/PLTV/88888888/224/3221225709/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV金牌综艺
+http://39.135.138.58:18890/PLTV/88888888/224/3221225711/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV军事评论
+http://39.135.138.58:18890/PLTV/88888888/224/3221225757/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV家庭剧场
+http://39.135.138.58:18890/PLTV/88888888/224/3221225713/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV精品综合
+http://39.135.138.58:18890/PLTV/88888888/224/3221225716/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV农业致富
+http://39.135.138.58:18890/PLTV/88888888/224/3221225670/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV武搏世界
+http://39.135.138.58:18890/PLTV/88888888/224/3221225656/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV中国功夫
+http://39.135.138.58:18890/PLTV/88888888/224/3221225660/index.m3u8
+#EXTINF:-1 group-title="央视",NewTV超级电视剧
+http://39.135.138.58:18890/PLTV/88888888/224/3221225625/index.m3u8
+
+
+
+
+
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/anhui.png",安徽卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000039
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/zhejiang.png",浙江卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000265
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongfang.png",东方卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000263
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/beijing.png",北京卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000194
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hunan.png",湖南卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000195
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shenzhen.png",深圳卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000197
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guizhou.png",贵州卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000577
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jiangsu.png",江苏卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000198
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangdong.png",广东卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000445
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hebei.png",河北卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000575
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png",黑龙江卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000196
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shandong.png",山东卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000470
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png",湖北卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000267
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/tianjin.png",天津卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000266
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/liaoning.png",辽宁卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000472
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jinyingjishi.png",金鹰纪实高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000569
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongnan.png",东南卫视高清
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000588
+#EXTINF:-1 group-title="卫视",综艺频道
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000008
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sichuan.png",四川卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000069
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/gansu.png",甘肃卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000094
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jiangxi.png",江西卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000065
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/ningxia.png",宁夏卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000082
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongnan.png",东南卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000075
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/chongqing.png",重庆卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000083
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/henan.png",河南卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000085
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangxi.png",广西卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000086
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shanxi.png",陕西卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000090
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/lvyou.png",海南卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000088
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jilin.png",吉林卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000091
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xinjiang.png",新疆卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000097
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/qinghai.png",青海卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000096
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/neimeng.png",内蒙古卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000098
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shanxi_.png",山西卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000099
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/yunnan.png",云南卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000060
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png",西藏卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000100
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xiamen.png",厦门卫视
+http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000244
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/bingtuan.png",兵团卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000462
+#EXTINF:-1 group-title="央视" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png",CGTN
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000148
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/kaku.png",卡酷动画
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000150
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png",金鹰卡通
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000151
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jiajiakt.png",嘉佳卡通
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000448
+#EXTINF:-1 group-title="卫视",CETV1
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000463
+#EXTINF:-1 group-title="卫视",CETV2
+http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000251
+#EXTINF:-1 group-title="卫视",CETV4
+http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000252
+#EXTINF:-1 group-title="卫视",山东教育
+http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000248
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/财富天下.png",财富天下
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000183
+#EXTINF:-1 group-title="卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sansha.png",三沙卫视
+http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000589
+
+
+
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201708/09/09/f735ddc6b1aabee62b060d9b821dc600_middle.jpg" group-title="象棋",八卦象棋大师
+http://192.168.2.169:35455/douyu/851040
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202004/0c898b1f6c714c308d390f6c067f343f_middle.jpg" group-title="象棋",帽子戏法Chess
+http://192.168.2.169:35455/douyu/4487219
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",程明
+http://192.168.2.169:35455/huya/610569
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",王子
+http://192.168.2.169:35455/huya/610553
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",龙帅
+http://192.168.2.169:35455/huya/729544
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",汉堡
+http://192.168.2.169:35455/huya/xiangqidashi
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201903/b6824877c6084e01b3905110733bbbed_middle.jpg" group-title="象棋",雷疯小叔
+http://192.168.2.169:35455/douyu/291514
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201807/c94582f0cb5436bfac73f3b8f13a7a80_middle.jpg" group-title="象棋",日月轮回888
+http://192.168.2.169:35455/douyu/2293920
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202005/08a3fb1b642d4575846a7c72d3a292e9_middle.jpg" group-title="象棋",小鹤求败
+http://192.168.2.169:35455/douyu/3830820
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201802/01/00/78e1aab504d4112b3d1f9d4db05eae7b_middle.jpg" group-title="象棋",大神KOR
+http://192.168.2.169:35455/douyu/1227260
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201805/5e5cd947be91bcaf66b720ee758b345b_middle.jpg" group-title="象棋",肖九拙
+http://192.168.2.169:35455/douyu/4369877
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202205/6921629f5f2a41e58ad191e3715b9f91_middle.jpg" group-title="象棋",象棋老吴a
+http://192.168.2.169:35455/douyu/882513
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202002/bdc3b91e6e7b43f681130ce5d5c7f601_middle.jpg" group-title="象棋",象棋仓老师
+http://192.168.2.169:35455/douyu/8122333
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",美食纪录片
+http://192.168.2.169:35455/douyu/9290734
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",火锅纪录片
+http://192.168.2.169:35455/douyu/9650849
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",李子柒
+http://192.168.2.169:35455/douyu/2901080
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",王刚
+http://192.168.2.169:35455/douyu/8144937
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",徐大sao
+http://192.168.2.169:35455/douyu/961386
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="美食",德爷
+http://192.168.2.169:35455/douyu/454867
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",百家讲坛
+http://192.168.2.169:35455/huya/11602032
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",天龙八部
+http://192.168.2.169:35455/douyu/7280583
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",龙门镖局
+http://192.168.2.169:35455/douyu/9650860
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",倚天屠龙记
+http://192.168.2.169:35455/huya/11342403
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",民兵葛二蛋
+http://192.168.2.169:35455/huya/11602072
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",铁齿铜牙纪晓岚
+http://192.168.2.169:35455/huya/11342396
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",康熙微服私访
+http://192.168.2.169:35455/huya/7550220
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",风云
+http://192.168.2.169:35455/douyu/9290755
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",大秦赋
+http://192.168.2.169:35455/douyu/1584198
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",神探狄仁杰
+http://192.168.2.169:35455/huya/11342425
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",雍正王朝
+http://192.168.2.169:35455/huya/11342439
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",神医喜来乐
+http://192.168.2.169:35455/huya/11601978
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",韦小宝
+http://192.168.2.169:35455/huya/23865080
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",三国
+http://192.168.2.169:35455/douyu/10946883
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",赵本山小品
+http://192.168.2.169:35455/douyu/9817716
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",经典小品
+http://192.168.2.169:35455/douyu/9067836
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",开心麻花小品
+http://192.168.2.169:35455/douyu/10153463
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",华语经典
+http://192.168.2.169:35455/douyu/85894
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰
+http://192.168.2.169:35455/huya/11342412
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",周星驰成龙
+http://192.168.2.169:35455/douyu/122402
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",漫威电影
+http://192.168.2.169:35455/douyu/6140589
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",豆瓣高分电影
+http://192.168.2.169:35455/douyu/8770422
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",盗墓
+http://192.168.2.169:35455/huya/11352871
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",达叔
+http://192.168.2.169:35455/huya/11336592
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",沈腾
+http://192.168.2.169:35455/huya/11601968
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",张卫健
+http://192.168.2.169:35455/huya/23728660
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",权力的游戏
+http://192.168.2.169:35455/douyu/8945323
+
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",柯南1
+http://192.168.2.169:35455/douyu/6484910
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",柯南2
+http://192.168.2.169:35455/douyu/5377297
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",虹猫蓝兔七侠传
+http://192.168.2.169:35455/huya/22592516
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",海绵宝宝
+http://192.168.2.169:35455/douyu/2250349
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",猫和老鼠
+http://192.168.2.169:35455/douyu/7888428
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",小当家
+http://192.168.2.169:35455/huya/24257300
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",七龙珠
+http://192.168.2.169:35455/huya/11601966
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",成龙历险记
+http://192.168.2.169:35455/huya/11352946
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",蓝胖子
+http://192.168.2.169:35455/huya/11601963
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",经典动漫
+http://192.168.2.169:35455/douyu/6610883
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",陈翔六点半
+http://192.168.2.169:35455/douyu/2132902
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",小片片说大篇
+http://192.168.2.169:35455/douyu/4258555
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",阿斗归来了
+http://192.168.2.169:35455/huya/adgll
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",英雄联盟赛事
+http://192.168.2.169:35455/douyu/288016
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/117fa2e8b03b4a8080141afc4c3beffe_middle.jpg" group-title="游戏",英雄联盟赛事_BL
+http://192.168.2.169:35455/bilibili/6?platform=h5&line=first&quality=10000
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", 英雄联盟赛事_HY
+http://192.168.2.169:35455/huya/msi
+#http://192.168.2.169:35455/huya/lpl
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", uzi
+http://192.168.2.169:35455/huya/uzi
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",doinb
+http://192.168.2.169:35455/douyu/252140
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",叶音符
+http://192.168.2.169:35455/douyu/12313
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", 八路奶粉
+http://192.168.2.169:35455/huya/651343
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",舟
+http://192.168.2.169:35455/douyu/39300
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",西瓜
+http://192.168.2.169:35455/douyu/103997
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",大师兄
+http://192.168.2.169:35455/douyu/888388
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",大司马
+http://192.168.2.169:35455/douyu/606118
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",PDD
+http://192.168.2.169:35455/douyu/101
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",格局
+http://192.168.2.169:35455/douyu/7722
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",小浩
+http://192.168.2.169:35455/douyu/554011
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",辣条
+http://192.168.2.169:35455/douyu/81866
+#EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", QQ飞车
+http://192.168.2.169:35455/huya/speed
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avanew/face/201710/28/10/5e604ad7e7d66a0512db7a452ce3cdfd_middle.jpg" group-title="游戏",严斌
+http://192.168.2.169:35455/douyu/5047677
