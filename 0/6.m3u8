@@ -35,13 +35,6 @@ http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000580
 http://[2409:8087:2001:20:2800:0:df6e:eb17]:80/wh7f454c46tw90393969_1500887054/ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
 
 
-#EXTINF:-1,tvg-id="怀旧剧场" tvg-name="怀旧剧场" tvg-logo="http://192.168.2.169:35455/logo/怀旧剧场.png" group-title="央视",CCTV怀旧剧场高清
-http://118.24.227.124/__cl/cg:live/__c/hjjcHD/__op/default/__f/index.m3u8
-#EXTINF:-1,tvg-id="第一剧场" tvg-name="第一剧场" tvg-logo="http://192.168.2.169:35455/logo/第一剧场.png" group-title="央视",CCTV第一剧场高清
-http://118.24.227.124/__cl/cg:live/__c/diyijuchangHD/__op/default/__f/index.m3u8
-#EXTINF:-1,tvg-id="兵器科技" tvg-name="兵器科技" tvg-logo="http://192.168.2.169:35455/logo/兵器科技.png" group-title="央视",CCTV兵器科技高清
-http://118.24.227.124/__cl/cg:live/__c/bqkjHD/__op/default/__f/index.m3u8
-
 
 
 #EXTINF:-1 tvg-id="求索动物" tvg-name="求索动物" tvg-logo="https://live.fanmingming.com/tv/求索动物.png" group-title="其他",求索动物
@@ -260,8 +253,8 @@ http://192.168.2.169:35455/douyu/454867
 
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",百家讲坛
 http://192.168.2.169:35455/huya/11602032
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",天龙八部
-http://192.168.2.169:35455/douyu/7280583
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",庆余年
+http://192.168.2.169:35455/douyu/5908256
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",龙门镖局
 http://192.168.2.169:35455/douyu/9650860
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="影视",倚天屠龙记
