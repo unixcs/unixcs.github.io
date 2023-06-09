@@ -340,8 +340,7 @@ http://192.168.2.169:35455/douyu/288016
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/117fa2e8b03b4a8080141afc4c3beffe_middle.jpg" group-title="游戏",英雄联盟赛事_BL
 http://192.168.2.169:35455/bilibili/6?platform=h5&line=first&quality=10000
 #EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", 英雄联盟赛事_HY
-http://192.168.2.169:35455/huya/msi
-#http://192.168.2.169:35455/huya/lpl
+http://192.168.2.169:35455/huya/lpl
 #EXTINF:-1 tvg-logo="https://huyaimg.msstatic.com/avatar/1074/d3/2dd5a76c6ab25bbac8605dea7cc443_180_135.jpg?1668095722" group-title="游戏", uzi
 http://192.168.2.169:35455/huya/uzi
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",doinb
