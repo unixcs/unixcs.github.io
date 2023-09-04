@@ -187,7 +187,7 @@ http://192.168.2.169:35455/douyu/4487219
 
 
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",王天一
-http://192.168.2.169:35455/douyin.com/999039291841
+http://192.168.2.169:35455/douyin?url=https://v.douyin.com/iejA3ks1
 
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",程明
 http://192.168.2.169:35455/huya/610569
