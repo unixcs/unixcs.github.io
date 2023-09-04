@@ -184,6 +184,11 @@ http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000589
 http://192.168.2.169:35455/douyu/851040
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202004/0c898b1f6c714c308d390f6c067f343f_middle.jpg" group-title="象棋",帽子戏法Chess
 http://192.168.2.169:35455/douyu/4487219
+
+
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",王天一
+http://192.168.2.169:35455/douyin.com/999039291841
+
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",程明
 http://192.168.2.169:35455/huya/610569
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",王子
