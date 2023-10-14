@@ -309,6 +309,9 @@ http://192.168.2.169:35455/douyu/4258555
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",阿斗归来了
 http://192.168.2.169:35455/huya/adgll
 
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",虎牙英雄联盟4k
+https://live.metshop.top/huya/s4k
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",bili英雄联盟赛事https://live.metshop.top/bilibili/10
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",英雄联盟赛事
 http://192.168.2.169:35455/douyu/288016
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/117fa2e8b03b4a8080141afc4c3beffe_middle.jpg" group-title="游戏",英雄联盟赛事_BL
