@@ -185,10 +185,6 @@ http://192.168.2.169:35455/douyu/851040
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202004/0c898b1f6c714c308d390f6c067f343f_middle.jpg" group-title="象棋",帽子戏法Chess
 http://192.168.2.169:35455/douyu/4487219
 
-
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",王天一
-http://192.168.2.169:35455/douyin?url=https://v.douyin.com/iejA3ks1
-
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",程明
 http://192.168.2.169:35455/huya/610569
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="象棋",王子
@@ -309,12 +305,7 @@ http://192.168.2.169:35455/douyu/4258555
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/201909/f063e9e3e018455ea084228c7510cb70_middle.jpg" group-title="剧场",阿斗归来了
 http://192.168.2.169:35455/huya/adgll
 
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",虎牙英雄联盟4k
-https://live.metshop.top/huya/s4k
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",bili英雄联盟赛事
-http://192.168.2.169:35455/bilibili/10
-#https://live.metshop.top/bilibili/10
-#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",英雄联盟赛事
+#EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/c757e4a0c96c4b3583e40cdb0451a1e1_middle.jpg" group-title="游戏",英雄联盟赛事_DY
 http://192.168.2.169:35455/douyu/288016
 #EXTINF:-1 tvg-logo="https://apic.douyucdn.cn/upload/avatar_v3/202208/117fa2e8b03b4a8080141afc4c3beffe_middle.jpg" group-title="游戏",英雄联盟赛事_BL
 http://192.168.2.169:35455/bilibili/6?platform=h5&line=first&quality=10000
