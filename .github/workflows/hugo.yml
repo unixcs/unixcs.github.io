@@ -27,8 +27,11 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          force_orphan: true
+        run: |
+          cd public
+          git init
+          git config --global user.name "unixcs"
+          git config --global user.email "fengx@fengx.eu.org"
+          git add .
+          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')"
+          git push -f -q git@github.com:unixcs/unixcs.github.io.git HEAD:gh-pages
