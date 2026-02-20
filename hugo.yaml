@@ -45,9 +45,21 @@ params:
     - name: x
       url: "https://x.com/unixcs"
   
-  # 禁用 Profile Mode，显示文章列表
+  # 启用 Profile Mode，显示社交图标
   profileMode:
-    enabled: false
+    enabled: true
+    title: "Unixcs"
+    subtitle: "Be the Master of Time!"
+    imageUrl: "/assets/header.jpg"
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: 文章
+        url: /posts/
+      - name: 归档
+        url: /archives/
+      - name: 标签
+        url: /tags/
 
   # 启用搜索
   enableSearch: true
