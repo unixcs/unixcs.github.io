@@ -35,17 +35,14 @@ params:
     - name: github
       url: "https://github.com/unixcs"
   
-  profileMode:
-    enabled: true
-    title: "Unixcs"
-    subtitle: "Be the Master of Time!"
-    imageUrl: "/assets/header.jpg"
-    imageWidth: 120
-    imageHeight: 120
-
+  # Home Info Mode - 显示标题和内容在顶部
   homeInfoParams:
     Title: "Unixcs"
     Content: "Be the Master of Time!"
+    
+  # 禁用 Profile Mode
+  profileMode:
+    enabled: false
 
 markup:
   highlight:
