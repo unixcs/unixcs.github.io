@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,15 +27,14 @@ jobs:
           npm install
           npm install -g hexo
 
-      - name: Generate and Deploy
+      - name: Generate Static Files
         run: |
           hexo clean
           hexo g
           cp -r css js assets public/
-          cd public
-          git init
-          git config --global user.name "unixcs"
-          git config --global user.email "fengx@fengx.eu.org"
-          git add .
-          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')"
-          git push -f -u git@github.com:unixcs/unixcs.github.io.git master
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
