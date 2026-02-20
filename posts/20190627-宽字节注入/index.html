@@ -1,0 +1,128 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>宽字节注入 | Unixcs</title>
+<meta name=keywords content="Web安全"><meta name=description content="前言如何解决 注入时 输入的     &amp;#39;(单引号)    被转义成    \&amp;#39;(反斜杠+单引号)
+
+首先我们来看一下sql注入中遇到的问题
+
+遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？
+
+使用宽字节注入，把单引号前的\给消除掉，这样就可以正常使用单引号去闭合了
+
+这里使用的方法是在单引号前面加上**%df**。
+关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~
+单引号前被插入了   \   说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。
+PHP转义函数
+
+
+addslashes，
+
+
+mysql_real_escape_string，
+
+
+mysql_escape_string
+
+
+宽字节注入条件：
+
+
+使用addslashes函数  (并且开启GPC)
+
+
+数据库编码设置为GBK   (php编码为 utf-8 或其它非GBK格式)
+
+
+宽字节注入流程：
+
+正常被转义：
+
+‘             –>                \‘            (单引号 -> 反斜杠+单引号)
+
+加%df 宽字节注入过滤:
+
+%df’    –>   %df%27% –>   %df%5c%27    –>    運’
+浏览器输入 –> url编码      –> addslashes转义    –> %df%5c被转义成汉字 運
+宽字节注入原理：
+%df%5c 为什么会被转义成为汉字 運 呢？
+%df’经过addslashes编码之后带入了‘\’
+%df’ 就变成了 %df' –>  %df%5c%27 (url编码后)
+%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字運 so最后输出结果为 運&amp;#39;
+
+讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?
+
+GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），
+在遇到 %df(ascii(223)) > ascii(128) 时自动拼接%5c，
+因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。"><meta name=author content="Unixcs"><link rel=canonical href=https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://www.fengx.eu.org/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://www.fengx.eu.org/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://www.fengx.eu.org/favicon-32x32.png><link rel=apple-touch-icon href=https://www.fengx.eu.org/apple-touch-icon.png><link rel=mask-icon href=https://www.fengx.eu.org/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/"><meta property="og:site_name" content="Unixcs"><meta property="og:title" content="宽字节注入"><meta property="og:description" content="前言如何解决 注入时 输入的 &amp;#39;(单引号) 被转义成 \&amp;#39;(反斜杠+单引号) 首先我们来看一下sql注入中遇到的问题 遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？
+使用宽字节注入，把单引号前的\给消除掉，这样就可以正常使用单引号去闭合了 这里使用的方法是在单引号前面加上**%df**。
+关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~
+单引号前被插入了 \ 说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。
+PHP转义函数 addslashes，
+mysql_real_escape_string，
+mysql_escape_string
+宽字节注入条件： 使用addslashes函数 (并且开启GPC)
+数据库编码设置为GBK (php编码为 utf-8 或其它非GBK格式)
+宽字节注入流程： 正常被转义： ‘ –> \‘ (单引号 -> 反斜杠+单引号)
+加%df 宽字节注入过滤: %df’ –> %df%27% –> %df%5c%27 –> 運’
+浏览器输入 –> url编码 –> addslashes转义 –> %df%5c被转义成汉字 運
+宽字节注入原理： %df%5c 为什么会被转义成为汉字 運 呢？
+%df’经过addslashes编码之后带入了‘\’
+%df’ 就变成了 %df' –> %df%5c%27 (url编码后)
+%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字運 so最后输出结果为 運&amp;#39;
+讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢? GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F）， 在遇到 %df(ascii(223)) > ascii(128) 时自动拼接%5c， 因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-06-27T00:00:00+00:00"><meta property="article:modified_time" content="2019-06-27T00:00:00+00:00"><meta property="article:tag" content="Web安全"><meta name=twitter:card content="summary"><meta name=twitter:title content="宽字节注入"><meta name=twitter:description content="前言如何解决 注入时 输入的     &amp;#39;(单引号)    被转义成    \&amp;#39;(反斜杠+单引号)
+
+首先我们来看一下sql注入中遇到的问题
+
+遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？
+
+使用宽字节注入，把单引号前的\给消除掉，这样就可以正常使用单引号去闭合了
+
+这里使用的方法是在单引号前面加上**%df**。
+关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~
+单引号前被插入了   \   说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。
+PHP转义函数
+
+
+addslashes，
+
+
+mysql_real_escape_string，
+
+
+mysql_escape_string
+
+
+宽字节注入条件：
+
+
+使用addslashes函数  (并且开启GPC)
+
+
+数据库编码设置为GBK   (php编码为 utf-8 或其它非GBK格式)
+
+
+宽字节注入流程：
+
+正常被转义：
+
+‘             –>                \‘            (单引号 -> 反斜杠+单引号)
+
+加%df 宽字节注入过滤:
+
+%df’    –>   %df%27% –>   %df%5c%27    –>    運’
+浏览器输入 –> url编码      –> addslashes转义    –> %df%5c被转义成汉字 運
+宽字节注入原理：
+%df%5c 为什么会被转义成为汉字 運 呢？
+%df’经过addslashes编码之后带入了‘\’
+%df’ 就变成了 %df' –>  %df%5c%27 (url编码后)
+%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字運 so最后输出结果为 運&amp;#39;
+
+讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?
+
+GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），
+在遇到 %df(ascii(223)) > ascii(128) 时自动拼接%5c，
+因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.fengx.eu.org/posts/"},{"@type":"ListItem","position":2,"name":"宽字节注入","item":"https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"宽字节注入","name":"宽字节注入","description":"前言如何解决 注入时 输入的 \u0026amp;#39;(单引号) 被转义成 \\\u0026amp;#39;(反斜杠+单引号) 首先我们来看一下sql注入中遇到的问题 遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？\n使用宽字节注入，把单引号前的\\给消除掉，这样就可以正常使用单引号去闭合了 这里使用的方法是在单引号前面加上**%df**。\n关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~\n单引号前被插入了 \\ 说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。\nPHP转义函数 addslashes，\nmysql_real_escape_string，\nmysql_escape_string\n宽字节注入条件： 使用addslashes函数 (并且开启GPC)\n数据库编码设置为GBK (php编码为 utf-8 或其它非GBK格式)\n宽字节注入流程： 正常被转义： ‘ –\u0026gt; \\‘ (单引号 -\u0026gt; 反斜杠+单引号)\n加%df 宽字节注入过滤: %df’ –\u0026gt; %df%27% –\u0026gt; %df%5c%27 –\u0026gt; 運’\n浏览器输入 –\u0026gt; url编码 –\u0026gt; addslashes转义 –\u0026gt; %df%5c被转义成汉字 運\n宽字节注入原理： %df%5c 为什么会被转义成为汉字 運 呢？\n%df’经过addslashes编码之后带入了‘\\’\n%df’ 就变成了 %df' –\u0026gt; %df%5c%27 (url编码后)\n%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字運 so最后输出结果为 運\u0026amp;#39;\n讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢? GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F）， 在遇到 %df(ascii(223)) \u0026gt; ascii(128) 时自动拼接%5c， 因此吃掉‘\\’，而%27、%20小于ascii(128)的字符就保留了。\n","keywords":["Web安全"],"articleBody":"前言如何解决 注入时 输入的 \u0026#39;(单引号) 被转义成 \\\u0026#39;(反斜杠+单引号) 首先我们来看一下sql注入中遇到的问题 遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？\n使用宽字节注入，把单引号前的\\给消除掉，这样就可以正常使用单引号去闭合了 这里使用的方法是在单引号前面加上**%df**。\n关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~\n单引号前被插入了 \\ 说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。\nPHP转义函数 addslashes，\nmysql_real_escape_string，\nmysql_escape_string\n宽字节注入条件： 使用addslashes函数 (并且开启GPC)\n数据库编码设置为GBK (php编码为 utf-8 或其它非GBK格式)\n宽字节注入流程： 正常被转义： ‘ –\u003e \\‘ (单引号 -\u003e 反斜杠+单引号)\n加%df 宽字节注入过滤: %df’ –\u003e %df%27% –\u003e %df%5c%27 –\u003e 運’\n浏览器输入 –\u003e url编码 –\u003e addslashes转义 –\u003e %df%5c被转义成汉字 運\n宽字节注入原理： %df%5c 为什么会被转义成为汉字 運 呢？\n%df’经过addslashes编码之后带入了‘\\’\n%df’ 就变成了 %df' –\u003e %df%5c%27 (url编码后)\n%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字運 so最后输出结果为 運\u0026#39;\n讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢? GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F）， 在遇到 %df(ascii(223)) \u003e ascii(128) 时自动拼接%5c， 因此吃掉‘\\’，而%27、%20小于ascii(128)的字符就保留了。\n","wordCount":"77","inLanguage":"zh-cn","datePublished":"2019-06-27T00:00:00Z","dateModified":"2019-06-27T00:00:00Z","author":{"@type":"Person","name":"Unixcs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/"},"publisher":{"@type":"Organization","name":"Unixcs","logo":{"@type":"ImageObject","url":"https://www.fengx.eu.org/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://www.fengx.eu.org/ accesskey=h title="Unixcs (Alt + H)">Unixcs</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">宽字节注入</h1><div class=post-meta><span title='2019-06-27 00:00:00 +0000 UTC'>June 27, 2019</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>77 words</span>&nbsp;·&nbsp;<span>Unixcs</span></div></header><div class=post-content><h4 id=前言如何解决-注入时-输入的---39单引号--被转义成--39反斜杠单引号>前言如何解决 注入时 输入的    <code>&amp;#39;</code>(单引号)    被转义成    <code>\&amp;#39;</code>(反斜杠+单引号)<a hidden class=anchor aria-hidden=true href=#前言如何解决-注入时-输入的---39单引号--被转义成--39反斜杠单引号>#</a></h4><ul><li>首先我们来看一下sql注入中遇到的问题</li></ul><p>遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？</p><ul><li>使用宽字节注入，把单引号前的\给消除掉，这样就可以正常使用单引号去闭合了</li></ul><p>这里使用的方法是在单引号前面加上**%df**。</p><p>关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~</p><p>单引号前被插入了 \ 说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。</p><h4 id=php转义函数>PHP转义函数<a hidden class=anchor aria-hidden=true href=#php转义函数>#</a></h4><ul><li><p>addslashes，</p></li><li><p>mysql_real_escape_string，</p></li><li><p>mysql_escape_string</p></li></ul><h4 id=宽字节注入条件>宽字节注入条件：<a hidden class=anchor aria-hidden=true href=#宽字节注入条件>#</a></h4><ul><li><p>使用addslashes函数 (并且开启GPC)</p></li><li><p>数据库编码设置为GBK (php编码为 utf-8 或其它非GBK格式)</p></li></ul><h4 id=宽字节注入流程>宽字节注入流程：<a hidden class=anchor aria-hidden=true href=#宽字节注入流程>#</a></h4><ul><li>正常被转义：</li></ul><p><strong>‘</strong>          –>            <strong>\‘</strong>          (单引号 -> 反斜杠+单引号)</p><ul><li>加%df 宽字节注入过滤:</li></ul><p><strong>%df’</strong>    –>   <strong>%df%27%</strong> –>   <strong>%df%5c%27</strong>    –>   <strong>運’</strong></p><p>浏览器输入 –> url编码     –> addslashes转义    –> %df%5c被转义成汉字 <code>運</code></p><h4 id=宽字节注入原理>宽字节注入原理：<a hidden class=anchor aria-hidden=true href=#宽字节注入原理>#</a></h4><p>%df%5c 为什么会被转义成为汉字 <code>運</code> 呢？</p><p>%df’经过addslashes编码之后带入了‘\’</p><p>%df’ 就变成了 %df' –> %df%5c%27 (url编码后)</p><p>%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字<code>運</code> so最后输出结果为 <code>運&amp;#39;</code></p><ul><li><strong>讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?</strong></li></ul><p>GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），
+在遇到 %df(ascii(223)) > ascii(128) 时自动拼接%5c，
+因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://www.fengx.eu.org/tags/web%E5%AE%89%E5%85%A8/>Web安全</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2026 <a href=https://www.fengx.eu.org/>Unixcs</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

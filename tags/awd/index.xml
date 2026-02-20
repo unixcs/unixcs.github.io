@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Awd on Unixcs</title><link>https://www.fengx.eu.org/tags/awd/</link><description>Recent content in Awd on Unixcs</description><generator>Hugo -- 0.146.0</generator><language>zh-cn</language><lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fengx.eu.org/tags/awd/index.xml" rel="self" type="application/rss+xml"/><item><title>不死马</title><link>https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/</link><pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/</guid><description>&lt;h3 id="什么是不死马内存马通俗讲就是不死马就是会运行一段永远不退出的程序常驻在php进程里无限执行">什么是不死马？&lt;strong>内存马&lt;/strong>，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。&lt;/h3>
+&lt;h3 id="生成过程不死马php----上传到server----server执行文件----server本地无限循环生成-一句话php">生成过程不死马.php → 上传到server → server执行文件 → server本地无限循环生成 (一句话.php)&lt;/h3>
+&lt;h3 id="两种不死马">两种不死马&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>网上流传的不死马&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ignore_user_abort(true);&lt;/code>
+函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>set_time_limit()&lt;/code>
+函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>unlink(__FILE__)&lt;/code>
+删除文件本身，以起到隐蔽自身的作用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>while&lt;/code>
+循环内每隔usleep(5000)即写新的后门文件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>system()&lt;/code>
+执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>升级版&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 ,
+那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.&lt;/p>
+&lt;p>正确的姿势应该是这样 :&lt;/p>
+&lt;p>参考:&lt;a href="https://xz.aliyun.com/t/1530/">https://xz.aliyun.com/t/1530/&lt;/a>
+&lt;a href="https://blog.csdn.net/ski_12/article/details/84920127">https://blog.csdn.net/ski_12/article/details/84920127&lt;/a>&lt;/p>
+&lt;h3 id="拓展-一句话木马参考httpswwwuedboxcompost6051">拓展#### 一句话木马参考：&lt;a href="https://www.uedbox.com/post/6051/">https://www.uedbox.com/post/6051/&lt;/a>&lt;/h3></description></item></channel></rss>

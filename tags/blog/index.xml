@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blog on Unixcs</title><link>https://www.fengx.eu.org/tags/blog/</link><description>Recent content in Blog on Unixcs</description><generator>Hugo -- 0.146.0</generator><language>zh-cn</language><lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fengx.eu.org/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>代码高亮</title><link>https://www.fengx.eu.org/posts/20190802-%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</link><pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190802-%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</guid><description>&lt;h4 id="前言之前的博客代码块没有对代码设置高亮看起来就很不舒服所以还是自己动手改改吧">前言之前的博客代码块没有对代码设置&lt;code>高亮&lt;/code>，看起来就很不舒服，所以还是自己动手改改吧~&lt;/h4>
+&lt;h3 id="原代码首先要找到高亮代码的位置一顿摸索后">原代码首先要找到高亮代码的位置，一顿摸索后····&lt;/h3>
+&lt;p>不出意外的找到了代码文件位置&lt;code>/source/css/_partial/layout.styl&lt;/code>&lt;/p>
+&lt;p>整体代码太多我就不往上放了
+附上代码块的关键代码：&lt;/p>
+&lt;p>对 &lt;code>单行代码&lt;/code> 和 &lt;code>代码块&lt;/code> 添加:&lt;strong>字体颜色、背景色、圆角、阴影&lt;/strong>&lt;/p>
+&lt;h3 id="修改后">修改后&lt;/h3></description></item><item><title>about blog</title><link>https://www.fengx.eu.org/posts/20190601-about-blog/</link><pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190601-about-blog/</guid><description>&lt;h3 id="0x00前言">0x00&lt;strong>前言&lt;/strong>&lt;/h3>
+&lt;p>this is my first blog
+昨天花了一天时间终于把这个博客开通了，俗话说前人栽树后人乘凉，多亏了一些前辈分享的一些博客，才能这么快上手。不过在这中间还是遇到了许多的坑，可能这些小问题在大佬们看来都不屑去写，但是对于萌新的我来说，这些东西还是要慢慢的去摸索。话不多说，开始填坑。&lt;/p>
+&lt;h3 id="0x01首先介绍下博客的环境">0x01&lt;strong>首先介绍下博客的环境&lt;/strong>&lt;/h3>
+&lt;p>&lt;code>github+hexo+node.js&lt;/code> (我使用的是win)&lt;/p>
+&lt;p>&lt;strong>搭建过程&lt;/strong>
+前期搭建的具体过程我就不一一叙述了，网上的例子很多，这里贴两个我搭建过程中参考的文章。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.cnblogs.com/jackyroc/p/7681938.html">case1&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://fangzh.top/2018/2018090514/">case2&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="0x02简单的记一下一些错误">0x02简单的记一下一些错误&lt;/h3>
+&lt;h5 id="1找不到-sshcd-ssh">1.找不到 .ssh&lt;code>cd ~/.ssh&lt;/code>&lt;/h5>
+&lt;p>&lt;del>？？黑人问号？？ 百度了N遍都没讲到点子上，最后终于在一个老哥的CSDN的文章里找到了解决办法，这里记录一下&lt;/del>&lt;/p>
+&lt;p>&lt;strong>解决方法：&lt;/strong>
+这里其实就是因为我们是第一次使用，~目录里缺少 .ssh文件夹
+这时候我们该干嘛？ 当然是去&lt;strong>创建一个.ssh文件夹！&lt;/strong>&lt;/p>
+&lt;p>打开 Git Bash，输入如下命令，然后连续按三个回车即可：
+&lt;code>ssh-keygen -t rsa -C &amp;amp;quot;your_email@example.com&amp;amp;quot;&lt;/code>
+然后会出来提示Enter file in which to save the key
+后面是一个路径，你就会找到你想要的.ssh文件夹了，去电脑里找吧。&lt;/p>
+&lt;h5 id="2所有文章功能缺失解决方法">2.所有文章功能缺失&lt;strong>解决方法：&lt;/strong>&lt;/h5>
+&lt;p>在根目录_config.yml配置文件的最后插入以下代码&lt;/p>
+&lt;h2 id="0x03">0x03&amp;mdash;&lt;/h2>
+&lt;p>&lt;strong>域名&lt;/strong>&lt;/p>
+&lt;p>主要流程：&lt;/p>
+&lt;p>&lt;strong>购买域名 -&amp;gt; 实名认证 -&amp;gt; 域名解析 -&amp;gt; githubpage绑定域名&lt;/strong>&lt;/p>
+&lt;p>前两步没啥好说的，这里主要介绍下后面两步&lt;/p>
+&lt;hr>
+&lt;p>域名解析里 添加 A 记录 指向以下任意ip&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>source目录里新建一个文件 &lt;strong>CNAME&lt;/strong>
+&lt;code>echo unixcs.com&lt;/code>
+&lt;code>echo www.unixcs.com&lt;/code>&lt;/p></description></item></channel></rss>

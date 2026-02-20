@@ -1,0 +1,177 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Docker | Unixcs</title>
+<meta name=keywords content="Linux"><meta name=description content="0x00前言
+好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！
+记一下最近刚接触的doker吧，把笔记知识点汇总一下。
+0x01Dcoker 是什么？？
+Docker的思想来自于集装箱，集装箱解决了什么问题？
+在一艘大船上，可以把货物规整的摆放起来。
+并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。
+那么我就不需要专门运送水果的船和专门运送化学品的船了。
+只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。
+
+
+还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧
+Case1
+Case2
+镜像（image）和容器（container）讲docker 之前必须要提的两个词 镜像 and 容器
+那么什么是镜像？什么又是容器呢？
+容器通俗来讲容器就是装东西的箱子，你可以把它理解为 集装箱
+容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。
+
+
+镜像是静态的。
+
+
+一个镜像可以创建多个容器。
+
+
+镜像你可以把镜像看成是我们电脑的里面的 软件安装包
+Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，
+
+
+容器是动态的。
+
+
+镜像对于容器只是可读的。
+
+
+0x02搭建docker主要流程：
+找镜像(search) -> 下镜像(pull) -> 查看镜像(images) -> 镜像中创建容器(run) -> 查看容器(ps)
+
+我用的是centos7搭建的docker
+检查centos版本是否支持docker
+1.查看内核版本 (是否大于3.10)
+uname -r
+2.安装docker
+yum -y install docker
+安装最新版本
+yum -y install docker-ce
+安装出现问题–>文章
+yum install  docker-ce- (指定安装版本)
+systemctl start docker     开启docker
+systemctl enable docker    开机启动
+docker version             查看docker版本号
+3.验证是否安装成功"><meta name=author content="Unixcs"><link rel=canonical href=https://www.fengx.eu.org/posts/20190611-docker/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://www.fengx.eu.org/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://www.fengx.eu.org/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://www.fengx.eu.org/favicon-32x32.png><link rel=apple-touch-icon href=https://www.fengx.eu.org/apple-touch-icon.png><link rel=mask-icon href=https://www.fengx.eu.org/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://www.fengx.eu.org/posts/20190611-docker/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://www.fengx.eu.org/posts/20190611-docker/"><meta property="og:site_name" content="Unixcs"><meta property="og:title" content="Docker"><meta property="og:description" content="0x00前言 好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！ 记一下最近刚接触的doker吧，把笔记知识点汇总一下。
+0x01Dcoker 是什么？？ Docker的思想来自于集装箱，集装箱解决了什么问题？ 在一艘大船上，可以把货物规整的摆放起来。 并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。 那么我就不需要专门运送水果的船和专门运送化学品的船了。 只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。
+还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧 Case1 Case2
+镜像（image）和容器（container）讲docker 之前必须要提的两个词 镜像 and 容器 那么什么是镜像？什么又是容器呢？
+容器通俗来讲容器就是装东西的箱子，你可以把它理解为 集装箱 容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。
+镜像是静态的。
+一个镜像可以创建多个容器。
+镜像你可以把镜像看成是我们电脑的里面的 软件安装包 Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，
+容器是动态的。
+镜像对于容器只是可读的。
+0x02搭建docker主要流程： 找镜像(search) -> 下镜像(pull) -> 查看镜像(images) -> 镜像中创建容器(run) -> 查看容器(ps)
+我用的是centos7搭建的docker 检查centos版本是否支持docker
+1.查看内核版本 (是否大于3.10) uname -r
+2.安装docker yum -y install docker 安装最新版本 yum -y install docker-ce 安装出现问题–>文章
+yum install docker-ce- (指定安装版本)
+systemctl start docker 开启docker systemctl enable docker 开机启动 docker version 查看docker版本号
+3.验证是否安装成功"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-06-11T00:00:00+00:00"><meta property="article:modified_time" content="2019-06-11T00:00:00+00:00"><meta property="article:tag" content="Linux"><meta name=twitter:card content="summary"><meta name=twitter:title content="Docker"><meta name=twitter:description content="0x00前言
+好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！
+记一下最近刚接触的doker吧，把笔记知识点汇总一下。
+0x01Dcoker 是什么？？
+Docker的思想来自于集装箱，集装箱解决了什么问题？
+在一艘大船上，可以把货物规整的摆放起来。
+并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。
+那么我就不需要专门运送水果的船和专门运送化学品的船了。
+只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。
+
+
+还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧
+Case1
+Case2
+镜像（image）和容器（container）讲docker 之前必须要提的两个词 镜像 and 容器
+那么什么是镜像？什么又是容器呢？
+容器通俗来讲容器就是装东西的箱子，你可以把它理解为 集装箱
+容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。
+
+
+镜像是静态的。
+
+
+一个镜像可以创建多个容器。
+
+
+镜像你可以把镜像看成是我们电脑的里面的 软件安装包
+Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，
+
+
+容器是动态的。
+
+
+镜像对于容器只是可读的。
+
+
+0x02搭建docker主要流程：
+找镜像(search) -> 下镜像(pull) -> 查看镜像(images) -> 镜像中创建容器(run) -> 查看容器(ps)
+
+我用的是centos7搭建的docker
+检查centos版本是否支持docker
+1.查看内核版本 (是否大于3.10)
+uname -r
+2.安装docker
+yum -y install docker
+安装最新版本
+yum -y install docker-ce
+安装出现问题–>文章
+yum install  docker-ce- (指定安装版本)
+systemctl start docker     开启docker
+systemctl enable docker    开机启动
+docker version             查看docker版本号
+3.验证是否安装成功"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.fengx.eu.org/posts/"},{"@type":"ListItem","position":2,"name":"Docker","item":"https://www.fengx.eu.org/posts/20190611-docker/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Docker","name":"Docker","description":"0x00前言 好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！ 记一下最近刚接触的doker吧，把笔记知识点汇总一下。\n0x01Dcoker 是什么？？ Docker的思想来自于集装箱，集装箱解决了什么问题？ 在一艘大船上，可以把货物规整的摆放起来。 并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。 那么我就不需要专门运送水果的船和专门运送化学品的船了。 只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。\n还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧 Case1 Case2\n镜像（image）和容器（container）讲docker 之前必须要提的两个词 镜像 and 容器 那么什么是镜像？什么又是容器呢？\n容器通俗来讲容器就是装东西的箱子，你可以把它理解为 集装箱 容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。\n镜像是静态的。\n一个镜像可以创建多个容器。\n镜像你可以把镜像看成是我们电脑的里面的 软件安装包 Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，\n容器是动态的。\n镜像对于容器只是可读的。\n0x02搭建docker主要流程： 找镜像(search) -\u0026gt; 下镜像(pull) -\u0026gt; 查看镜像(images) -\u0026gt; 镜像中创建容器(run) -\u0026gt; 查看容器(ps)\n我用的是centos7搭建的docker 检查centos版本是否支持docker\n1.查看内核版本 (是否大于3.10) uname -r\n2.安装docker yum -y install docker 安装最新版本 yum -y install docker-ce 安装出现问题–\u0026gt;文章\nyum install docker-ce- (指定安装版本)\nsystemctl start docker 开启docker systemctl enable docker 开机启动 docker version 查看docker版本号\n3.验证是否安装成功\n","keywords":["Linux"],"articleBody":"0x00前言 好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！ 记一下最近刚接触的doker吧，把笔记知识点汇总一下。\n0x01Dcoker 是什么？？ Docker的思想来自于集装箱，集装箱解决了什么问题？ 在一艘大船上，可以把货物规整的摆放起来。 并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。 那么我就不需要专门运送水果的船和专门运送化学品的船了。 只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。\n还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧 Case1 Case2\n镜像（image）和容器（container）讲docker 之前必须要提的两个词 镜像 and 容器 那么什么是镜像？什么又是容器呢？\n容器通俗来讲容器就是装东西的箱子，你可以把它理解为 集装箱 容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。\n镜像是静态的。\n一个镜像可以创建多个容器。\n镜像你可以把镜像看成是我们电脑的里面的 软件安装包 Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，\n容器是动态的。\n镜像对于容器只是可读的。\n0x02搭建docker主要流程： 找镜像(search) -\u003e 下镜像(pull) -\u003e 查看镜像(images) -\u003e 镜像中创建容器(run) -\u003e 查看容器(ps)\n我用的是centos7搭建的docker 检查centos版本是否支持docker\n1.查看内核版本 (是否大于3.10) uname -r\n2.安装docker yum -y install docker 安装最新版本 yum -y install docker-ce 安装出现问题–\u003e文章\nyum install docker-ce- (指定安装版本)\nsystemctl start docker 开启docker systemctl enable docker 开机启动 docker version 查看docker版本号\n3.验证是否安装成功\ndocker run hello-world\n到这里其实docker已经安装好了，但！安装好仅仅只是第一步骤； 后面还要下载所需的镜像或者使用dockerfile自行构建docker镜像； 最后再部署安装你的应用程序到docker容器中。\n一. 镜像下载CentOS7 镜像 docker pull centos\n安装时遇到的问题 x509: certificate has expired or is not yet valid错误解决\n这个问题基本上是因为证书出现过期导致。\n解决办法 查看虚拟机和远程服务器的时间是否同步： 👇👇 date 若时间不同步，执行 ntpdate cn.pool.ntp.org 若安装失败 检查是否安装了ntpate yum install ntpdate -y\n镜像命令1.搜索镜像 docker search 关键词\n2.获取镜像 docker pull 仓库名称[:tag]\n3.查看镜像 docker images\n4.删除镜像 docker rmi [image id] docker rmi [tag] //仓库名\n使用 docker rmi [id] 命令时，必须确保该镜像没有被容器使用才能进行; 删除时系统会先删除掉指向该镜像的所有标签，然后删除镜像本身。\n5.存出镜像和载入镜像\ndocker save -o 存储文件名 存储的镜像\n二.容器1.创建容器 docker create docker run //创建并启动容器\n2.查看容器 docker ps docker ps -a // 查看所有docker\n3.启动/终止容器 docker start [names] docker stop [names]\n4.删除容器\n终止状态的容器 docker rm [CONTAINER ID]\n正在运行的容器 docker rm -f [CONTAINER ID]\n5.进入容器 docker exec -it [name] bash 进入容器 docker run -i -t centos /bin/bash 创建centos\nexec是进入已经存在的容器，run是创建新容器\n5.退出容器 ctrl+d 退出容器且关闭\nctrl+p+q 退出容器但不关闭\ndocker kill -s HUP [容器名]\nHUP(1)是让进程挂起，睡眠; kill (9)六亲不认的杀掉 term(15)正常的退出进程\n0x03docker logs errors and others 遇到问题、运行不了之类的先看日志报错信息!\n1. Exited (1) 错误这个报错信息 是我在使用php镜像创建一个新的容器时出现的，当时只知道傻乎乎的的去百度搜，不知道查看docker logs 报错，导致走了很长的弯路！ 错误原因： php的配置文件里 server 被我打成了erver ，发现这个错误的时候 我真的是想把自己揍一顿(复制粘贴都能错)\n总结： 细心细心再细心！！\ndocker los 命令\n2. 配置没问题，访问搭建的nginx不成功错误原因： 重启下dockers systemctl restart docker 重启容器 docker restart [name]\n再次访问 success！\n进入docker 方法 exec docker exec [names] bash\nnsenter\n1 . 查看容器[id]的进程的PID docker inspect -f \\{\\{.State.Pid\\}\\} [CONTAINER ID]\n2 . 使用pid进入容器 nsenter --target $PID --mount --uts --ipc --net --pid $PID为第一步查询到的PID\nabout nsenter install\ndocker卸载查看已安装的包 yum list installed | grep docker\n删除包 yum -y remove docker-engine.x86_64\n推荐两个doker 搭建nginx、php 、mysql 的文章\n参考：https://blog.51cto.com/11134648/2160257\n","wordCount":"287","inLanguage":"zh-cn","datePublished":"2019-06-11T00:00:00Z","dateModified":"2019-06-11T00:00:00Z","author":{"@type":"Person","name":"Unixcs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fengx.eu.org/posts/20190611-docker/"},"publisher":{"@type":"Organization","name":"Unixcs","logo":{"@type":"ImageObject","url":"https://www.fengx.eu.org/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://www.fengx.eu.org/ accesskey=h title="Unixcs (Alt + H)">Unixcs</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">Docker</h1><div class=post-meta><span title='2019-06-11 00:00:00 +0000 UTC'>June 11, 2019</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>287 words</span>&nbsp;·&nbsp;<span>Unixcs</span></div></header><div class=post-content><h3 id=0x00前言>0x00<strong>前言</strong><a hidden class=anchor aria-hidden=true href=#0x00前言>#</a></h3><p>好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！
+记一下最近刚接触的doker吧，把笔记知识点汇总一下。</p><h3 id=0x01dcoker-是什么>0x01<strong>Dcoker 是什么？？</strong><a hidden class=anchor aria-hidden=true href=#0x01dcoker-是什么>#</a></h3><p>Docker的思想来自于<code>集装箱</code>，集装箱解决了什么问题？
+在一艘大船上，可以把货物规整的摆放起来。
+并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。
+那么我就不需要专门运送水果的船和专门运送化学品的船了。
+只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。</p><blockquote></blockquote><p>还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧
+<a href=https://my.oschina.net/jamesview/blog/2994112>Case1</a>
+<a href=https://www.jianshu.com/p/8cccc39c9f1c>Case2</a></p><h5 id=镜像image和容器container讲docker-之前必须要提的两个词-镜像-and-容器>镜像（image）和容器（container）讲docker 之前必须要提的两个词 <strong>镜像</strong> and <strong>容器</strong><a hidden class=anchor aria-hidden=true href=#镜像image和容器container讲docker-之前必须要提的两个词-镜像-and-容器>#</a></h5><p>那么什么是镜像？什么又是容器呢？</p><h5 id=容器通俗来讲容器就是装东西的箱子你可以把它理解为-集装箱>容器通俗来讲容器就是装东西的箱子，你可以把它理解为 <strong>集装箱</strong><a hidden class=anchor aria-hidden=true href=#容器通俗来讲容器就是装东西的箱子你可以把它理解为-集装箱>#</a></h5><p>容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。</p><ul><li><p>镜像是静态的。</p></li><li><p>一个镜像可以创建多个容器。</p></li></ul><h5 id=镜像你可以把镜像看成是我们电脑的里面的-软件安装包>镜像你可以把镜像看成是我们电脑的里面的 <strong>软件安装包</strong><a hidden class=anchor aria-hidden=true href=#镜像你可以把镜像看成是我们电脑的里面的-软件安装包>#</a></h5><p>Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，</p><ul><li><p>容器是动态的。</p></li><li><p>镜像对于容器只是可读的。</p></li></ul><h3 id=0x02搭建docker主要流程>0x02<strong>搭建docker主要流程：</strong><a hidden class=anchor aria-hidden=true href=#0x02搭建docker主要流程>#</a></h3><p><strong>找镜像(search) -> 下镜像(pull) -> 查看镜像(images) -> 镜像中创建容器(run) -> 查看容器(ps)</strong></p><hr><p>我用的是centos7搭建的docker
+检查centos版本是否支持docker</p><p>1.查看内核版本 (是否大于3.10)
+<code>uname -r</code></p><p>2.安装docker
+<code>yum -y install docker</code>
+安装最新版本
+<code>yum -y install docker-ce</code>
+安装出现问题–><a href=https://blog.csdn.net/xixiworld/article/details/71438794>文章</a></p><p>yum install docker-ce- (指定安装版本)</p><p><code>systemctl start docker</code> 开启docker
+<code>systemctl enable docker</code> 开机启动
+<code>docker version</code> 查看docker版本号</p><p>3.验证是否安装成功</p><p><code>docker run hello-world</code></p><blockquote></blockquote><p>到这里其实docker已经安装好了，但！安装好仅仅只是第一步骤；
+后面还要下载所需的镜像或者使用dockerfile自行构建docker镜像；
+最后再部署安装你的应用程序到docker容器中。</p><h3 id=一-镜像下载centos7-镜像>一. 镜像下载CentOS7 镜像<a hidden class=anchor aria-hidden=true href=#一-镜像下载centos7-镜像>#</a></h3><p><code>docker pull centos</code></p><p><strong>安装时遇到的问题</strong>
+x509: certificate has expired or is not yet valid错误解决</p><p>这个问题基本上是因为证书出现过期导致。</p><p><strong>解决办法</strong>
+查看虚拟机和远程服务器的时间是否同步：
+👇👇
+<code>date</code>
+若时间不同步，执行
+<code>ntpdate cn.pool.ntp.org</code>
+若安装失败 检查是否安装了ntpate
+<code>yum install ntpdate -y</code></p><h5 id=镜像命令1搜索镜像>镜像命令1.搜索镜像<a hidden class=anchor aria-hidden=true href=#镜像命令1搜索镜像>#</a></h5><p>docker search 关键词</p><p>2.获取镜像
+docker pull 仓库名称[:tag]</p><p>3.查看镜像
+<code>docker images</code></p><p>4.删除镜像
+<code>docker rmi [image id]</code>
+<code>docker rmi [tag]</code> //仓库名</p><blockquote></blockquote><p>使用 <strong>docker rmi [id]</strong> 命令时，必须确保该镜像没有被容器使用才能进行;
+删除时系统会先删除掉指向该镜像的所有标签，然后删除镜像本身。</p><p>5.存出镜像和载入镜像</p><p>docker save -o 存储文件名 存储的镜像</p><h3 id=二容器1创建容器>二.容器1.创建容器<a hidden class=anchor aria-hidden=true href=#二容器1创建容器>#</a></h3><p><code>docker create</code>
+<code>docker run</code> //创建并启动容器</p><p>2.查看容器
+<code>docker ps</code>
+<code>docker ps -a</code> // 查看所有docker</p><p>3.启动/终止容器
+<code>docker start [names]</code>
+<code>docker stop [names]</code></p><p>4.删除容器</p><ul><li><p>终止状态的容器
+<code>docker rm [CONTAINER ID]</code></p></li><li><p>正在运行的容器
+<code>docker rm -f [CONTAINER ID]</code></p></li></ul><p>5.进入容器
+<code>docker exec -it [name] bash</code> 进入容器
+<code>docker run -i -t centos /bin/bash</code> 创建centos</p><blockquote></blockquote><p>exec是进入已经存在的容器，run是创建新容器</p><p>5.退出容器
+<code>ctrl+d</code> 退出容器且关闭</p><p><code>ctrl+p+q</code> 退出容器但不关闭</p><p><code>docker kill -s HUP [容器名]</code></p><blockquote></blockquote><p>HUP(1)是让进程挂起，睡眠;
+kill (9)六亲不认的杀掉
+term(15)正常的退出进程</p><hr><h3 id=0x03docker-logs-errors-and-others>0x03docker logs errors and others<a hidden class=anchor aria-hidden=true href=#0x03docker-logs-errors-and-others>#</a></h3><p>遇到问题、运行不了之类的先看日志报错信息!</p><h5 id=1-exited-1-错误这个报错信息-是我在使用php镜像创建一个新的容器时出现的当时只知道傻乎乎的的去百度搜不知道查看docker-logs-报错导致走了很长的弯路>1. Exited (1) 错误这个报错信息 是我在使用php镜像创建一个新的容器时出现的，当时只知道傻乎乎的的去百度搜，不知道查看docker logs 报错，导致走了很长的弯路！<a hidden class=anchor aria-hidden=true href=#1-exited-1-错误这个报错信息-是我在使用php镜像创建一个新的容器时出现的当时只知道傻乎乎的的去百度搜不知道查看docker-logs-报错导致走了很长的弯路>#</a></h5><p>错误原因： php的配置文件里 server 被我打成了erver ，发现这个错误的时候 我真的是想把自己揍一顿(<del>复制粘贴都能错</del>)</p><p>总结： 细心细心再细心！！</p><p><strong>docker los 命令</strong></p><h5 id=2-配置没问题访问搭建的nginx不成功错误原因>2. 配置没问题，访问搭建的nginx不成功错误原因：<a hidden class=anchor aria-hidden=true href=#2-配置没问题访问搭建的nginx不成功错误原因>#</a></h5><p>重启下dockers
+systemctl restart docker
+重启容器
+docker restart [name]</p><p>再次访问
+success！</p><hr><hr><h3 id=进入docker-方法>进入docker 方法<a hidden class=anchor aria-hidden=true href=#进入docker-方法>#</a></h3><ul><li><p><strong>exec</strong>
+<code>docker exec [names] bash</code></p></li><li><p><strong>nsenter</strong></p></li></ul><p>1 . 查看容器[id]的进程的PID
+<code>docker inspect -f \{\{.State.Pid\}\} [CONTAINER ID]</code></p><p>2 . 使用pid进入容器
+<code>nsenter --target $PID --mount --uts --ipc --net --pid</code>
+$PID为第一步查询到的PID</p><p><a href=https://blog.csdn.net/qq_39629343/article/details/80170164>about nsenter install</a></p><h3 id=docker卸载查看已安装的包>docker卸载查看已安装的包<a hidden class=anchor aria-hidden=true href=#docker卸载查看已安装的包>#</a></h3><p><code>yum list installed | grep docker</code></p><p>删除包
+<code>yum -y remove docker-engine.x86_64</code></p><hr><p>推荐两个doker 搭建<a href=https://www.runoob.com/docker/docker-install-nginx.html>nginx</a>、<a href=https://www.runoob.com/docker/docker-install-php.html>php</a> 、mysql 的文章</p><p>参考：<a href=https://blog.51cto.com/11134648/2160257>https://blog.51cto.com/11134648/2160257</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://www.fengx.eu.org/tags/linux/>Linux</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2026 <a href=https://www.fengx.eu.org/>Unixcs</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Unixcs</title><link>https://www.fengx.eu.org/posts/</link><description>Recent content in Posts on Unixcs</description><generator>Hugo -- 0.146.0</generator><language>zh-cn</language><lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fengx.eu.org/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian同步方法</title><link>https://www.fengx.eu.org/posts/20260220-obsidian%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</link><pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20260220-obsidian%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</guid><description>&lt;h2 id="obsidian同步方法">Obsidian同步方法&lt;/h2>
+&lt;p>Obsidian的安卓和Win 10端同步的一个方法。&lt;/p>
+&lt;p>首先准备工作，安卓手机，OneDrive账号。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>安卓手机下载Flowd Sync软件。在里面登录你的OneDrive账号，并且验证密钥，粘贴进去。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安卓手机打开Obsidian的软件，在第三方浏览插件中搜索关键词Remotely save，添加插件后，在里面登录OneDrive账号。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果笔记在安卓端、电脑端数据为空，首次设置为增量推送。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>电脑端打开Obsidian软件，添加库的地址为OneDrive里的ob同步地址。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>最后回到安卓端，修改同步设置为双向同步。另外可以单独设置同步为每次打开后。&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Obsidian同步方法</title><link>https://www.fengx.eu.org/posts/obsidian-sync/</link><pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/obsidian-sync/</guid><description>&lt;p>Obsidian的安卓和Win 10端同步的一个方法。&lt;/p>
+&lt;p>首先准备工作，安卓手机，OneDrive账号。&lt;/p>
+&lt;ol>
+&lt;li>安卓手机下载Flowd Sync软件。在里面登录你的OneDrive账号，并且验证密钥，粘贴进去。&lt;/li>
+&lt;li>安卓手机打开Obsidian的软件，在第三方浏览插件中搜索关键词Remotely save，添加插件后，在里面登录OneDrive账号。&lt;/li>
+&lt;li>如果笔记在安卓端、电脑端数据为空，首次设置为增量推送。&lt;/li>
+&lt;li>电脑端打开Obsidian软件，添加库的地址为OneDrive里的ob同步地址。&lt;/li>
+&lt;li>最后回到安卓端，修改同步设置为双向同步。另外可以单独设置同步为每次打开后。&lt;/li>
+&lt;/ol></description></item><item><title>不死马</title><link>https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/</link><pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/</guid><description>&lt;h3 id="什么是不死马内存马通俗讲就是不死马就是会运行一段永远不退出的程序常驻在php进程里无限执行">什么是不死马？&lt;strong>内存马&lt;/strong>，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。&lt;/h3>
+&lt;h3 id="生成过程不死马php----上传到server----server执行文件----server本地无限循环生成-一句话php">生成过程不死马.php → 上传到server → server执行文件 → server本地无限循环生成 (一句话.php)&lt;/h3>
+&lt;h3 id="两种不死马">两种不死马&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>网上流传的不死马&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ignore_user_abort(true);&lt;/code>
+函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>set_time_limit()&lt;/code>
+函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>unlink(__FILE__)&lt;/code>
+删除文件本身，以起到隐蔽自身的作用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>while&lt;/code>
+循环内每隔usleep(5000)即写新的后门文件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>system()&lt;/code>
+执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>升级版&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 ,
+那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.&lt;/p>
+&lt;p>正确的姿势应该是这样 :&lt;/p>
+&lt;p>参考:&lt;a href="https://xz.aliyun.com/t/1530/">https://xz.aliyun.com/t/1530/&lt;/a>
+&lt;a href="https://blog.csdn.net/ski_12/article/details/84920127">https://blog.csdn.net/ski_12/article/details/84920127&lt;/a>&lt;/p>
+&lt;h3 id="拓展-一句话木马参考httpswwwuedboxcompost6051">拓展#### 一句话木马参考：&lt;a href="https://www.uedbox.com/post/6051/">https://www.uedbox.com/post/6051/&lt;/a>&lt;/h3></description></item><item><title>代码高亮</title><link>https://www.fengx.eu.org/posts/20190802-%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</link><pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190802-%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</guid><description>&lt;h4 id="前言之前的博客代码块没有对代码设置高亮看起来就很不舒服所以还是自己动手改改吧">前言之前的博客代码块没有对代码设置&lt;code>高亮&lt;/code>，看起来就很不舒服，所以还是自己动手改改吧~&lt;/h4>
+&lt;h3 id="原代码首先要找到高亮代码的位置一顿摸索后">原代码首先要找到高亮代码的位置，一顿摸索后····&lt;/h3>
+&lt;p>不出意外的找到了代码文件位置&lt;code>/source/css/_partial/layout.styl&lt;/code>&lt;/p>
+&lt;p>整体代码太多我就不往上放了
+附上代码块的关键代码：&lt;/p>
+&lt;p>对 &lt;code>单行代码&lt;/code> 和 &lt;code>代码块&lt;/code> 添加:&lt;strong>字体颜色、背景色、圆角、阴影&lt;/strong>&lt;/p>
+&lt;h3 id="修改后">修改后&lt;/h3></description></item><item><title>宽字节注入</title><link>https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/</link><pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/</guid><description>&lt;h4 id="前言如何解决-注入时-输入的---39单引号--被转义成--39反斜杠单引号">前言如何解决 注入时 输入的    &lt;code>&amp;amp;#39;&lt;/code>(单引号)    被转义成    &lt;code>\&amp;amp;#39;&lt;/code>(反斜杠+单引号)&lt;/h4>
+&lt;ul>
+&lt;li>首先我们来看一下sql注入中遇到的问题&lt;/li>
+&lt;/ul>
+&lt;p>遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？&lt;/p>
+&lt;ul>
+&lt;li>使用宽字节注入，把单引号前的\给消除掉，这样就可以正常使用单引号去闭合了&lt;/li>
+&lt;/ul>
+&lt;p>这里使用的方法是在单引号前面加上**%df**。&lt;/p>
+&lt;p>关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~&lt;/p>
+&lt;p>单引号前被插入了 \ 说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。&lt;/p>
+&lt;h4 id="php转义函数">PHP转义函数&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>addslashes，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>mysql_real_escape_string，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>mysql_escape_string&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="宽字节注入条件">宽字节注入条件：&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>使用addslashes函数 (并且开启GPC)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据库编码设置为GBK (php编码为 utf-8 或其它非GBK格式)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="宽字节注入流程">宽字节注入流程：&lt;/h4>
+&lt;ul>
+&lt;li>正常被转义：&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>‘&lt;/strong>          –&amp;gt;            &lt;strong>\‘&lt;/strong>          (单引号 -&amp;gt; 反斜杠+单引号)&lt;/p>
+&lt;ul>
+&lt;li>加%df 宽字节注入过滤:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>%df’&lt;/strong>    –&amp;gt;   &lt;strong>%df%27%&lt;/strong> –&amp;gt;   &lt;strong>%df%5c%27&lt;/strong>    –&amp;gt;   &lt;strong>運’&lt;/strong>&lt;/p>
+&lt;p>浏览器输入 –&amp;gt; url编码     –&amp;gt; addslashes转义    –&amp;gt; %df%5c被转义成汉字 &lt;code>運&lt;/code>&lt;/p>
+&lt;h4 id="宽字节注入原理">宽字节注入原理：&lt;/h4>
+&lt;p>%df%5c 为什么会被转义成为汉字 &lt;code>運&lt;/code> 呢？&lt;/p>
+&lt;p>%df’经过addslashes编码之后带入了‘\’&lt;/p>
+&lt;p>%df’ 就变成了 %df' –&amp;gt; %df%5c%27 (url编码后)&lt;/p>
+&lt;p>%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字&lt;code>運&lt;/code> so最后输出结果为 &lt;code>運&amp;amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），
+在遇到 %df(ascii(223)) &amp;gt; ascii(128) 时自动拼接%5c，
+因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。&lt;/p></description></item><item><title>about study</title><link>https://www.fengx.eu.org/posts/20190619-about-study/</link><pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190619-about-study/</guid><description>&lt;h5 id="前言你的间接性努力就是为了缓解持续性堕落带给你的焦虑而存在的">前言&lt;strong>你的间接性努力就是为了缓解持续性堕落带给你的焦虑而存在的&lt;/strong>&lt;/h5>
+&lt;h5 id="最近状态前段时间在知乎看到一篇关于自律的文章里面谈到有一种努力叫做间接性努力">最近状态前段时间在知乎看到一篇关于自律的文章，里面谈到有一种努力叫做&lt;code>间接性努力&lt;/code>。&lt;/h5>
+&lt;p>回想自己这段时间的状态，总是被动的去学习，每天生活看似充实但实际上却是&lt;del>瞎几把&lt;/del>努力！没有任何用。
+时间都浪费在琐碎事上去了，本来在学一个新的知识点，发现手机屏幕亮了，就不由自主的拿起手机刷了起来，再回过头来时发现时间已经过去大半，刚才那个知识点还没看完却又已忘的差不多了。
+周末无聊时总是沉浸在游戏直播，手机app里，压根就没有想到过去学一点东西。喜欢这种短暂的快感,一时的享受。晚上睡觉前想起自己这样的一天时，又开始懊悔不已。。如此往复,周而复始，恶性循环！&lt;/p>
+&lt;p>总结：&lt;code>没有目标，缺少努力的动力&lt;/code>；&lt;code>漫无目的，逮到什么学什么，看似学了很多，实际都是无用功&lt;/code>；&lt;code>容易分心，缺乏自律！&lt;/code>&lt;/p>
+&lt;h5 id="如何改变">如何改变&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>制定目标&lt;/strong>(由大到小，细化目标)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>找到自己真实的发自内心的兴趣点&lt;/strong>(兴趣才是最好的老师)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>自律！约束自己!!&lt;/strong>(该学学该玩玩，but学的时候一定不能玩！)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="flag给自己定个小目标这个月剩下的这几天把之前落下的视频-基础-进阶-全部补完">flag给自己定个小目标，这个月剩下的这几天，把之前落下的视频 基础-进阶 全部补完！&lt;/h5>
+&lt;p>争取下个月开始do a Bug Bounty Hunters&lt;/p>
+&lt;p>&lt;strong>学习从来都不是一件轻松的事情，但也要学会苦中作乐，去享受学习的过程~&lt;/strong>&lt;/p></description></item><item><title>Windous下Wfuzz的安装</title><link>https://www.fengx.eu.org/posts/20190613-windous%E4%B8%8Bwfuzz%E7%9A%84%E5%AE%89%E8%A3%85/</link><pubDate>Thu, 13 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190613-windous%E4%B8%8Bwfuzz%E7%9A%84%E5%AE%89%E8%A3%85/</guid><description>&lt;h3 id="0x00前言">0x00&lt;strong>前言&lt;/strong>&lt;/h3>
+&lt;p>wfuzz这个工具在kali下是默认安装的~ 可是由于虚拟机用kali总是有种卡卡的感觉，就想着在windous下也装一个。
+其实之前我尝试安装过几次，因为没学过python，就一直没有装成功。。&lt;del>还是因为自己菜&lt;/del>
+终于！！！趁着今天下午没事，在 你好表哥 的帮助下~ 终于把这个史诗级的难题给solve了&lt;/p>
+&lt;hr>
+&lt;p>关于wfuzz的安装这里介绍&lt;strong>两种方法&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>基于python2.7环境安装&lt;/li>
+&lt;/ul>
+&lt;p>exe版 免python环境，打开即用！！ &lt;del>早知道有这个版本,我TM还费那么大劲去配置那些看着就脑壳疼的环境干嘛！&lt;/del>&lt;/p>
+&lt;p>0x01  &lt;strong>基于python2.7环境安装wufzz&lt;/strong>首先你要有python2.7+pip的环境，这里环境的安装就不多介绍了~ 直接进入正题&lt;/p>
+&lt;p>&lt;a href="https://github.com/xmendez/wfuzz/archive/v2.3.4.tar.gz">下载wfuzz&lt;/a>&lt;/p>
+&lt;p>cmd进入文件根目录 &lt;code>cd wfuzz-2.3.4&lt;/code>&lt;/p>
+&lt;p>①&lt;code>setup.py install&lt;/code>&lt;/p>
+&lt;p>②&lt;code>pip install -r requirements.txt&lt;/code>&lt;/p>
+&lt;p>③&lt;code>pip install wfuzz&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>① setup.py是&lt;strong>安装程序&lt;/strong>
+② requirements.txt 文件是python项目中必须包含一个文件用于记录所有依赖包及其精确的版本号用以新环境部署。&lt;strong>这里是安装依赖包&lt;/strong>
+③ &lt;strong>安装wfuzz&lt;/strong>&lt;/p>
+&lt;p>到这里wfuzz就安装成功了，如何去验证是否安装成功呢？&lt;/p>
+&lt;p>在cmd下输入&lt;code>wfuzz&lt;/code>&lt;/p>
+&lt;p>0x02  &lt;strong>exe版本的安装&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>下载
+&lt;a href="https://github.com/xmendez/wfuzz/releases/download/v2.1-beta/wfuzz_2.1_windows.zip">下载wfuzz&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>打开&lt;/p>
+&lt;ul>
+&lt;li>运行&lt;/li>
+&lt;/ul></description></item><item><title>Docker</title><link>https://www.fengx.eu.org/posts/20190611-docker/</link><pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190611-docker/</guid><description>&lt;h3 id="0x00前言">0x00&lt;strong>前言&lt;/strong>&lt;/h3>
+&lt;p>好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！
+记一下最近刚接触的doker吧，把笔记知识点汇总一下。&lt;/p>
+&lt;h3 id="0x01dcoker-是什么">0x01&lt;strong>Dcoker 是什么？？&lt;/strong>&lt;/h3>
+&lt;p>Docker的思想来自于&lt;code>集装箱&lt;/code>，集装箱解决了什么问题？
+在一艘大船上，可以把货物规整的摆放起来。
+并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。
+那么我就不需要专门运送水果的船和专门运送化学品的船了。
+只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧
+&lt;a href="https://my.oschina.net/jamesview/blog/2994112">Case1&lt;/a>
+&lt;a href="https://www.jianshu.com/p/8cccc39c9f1c">Case2&lt;/a>&lt;/p>
+&lt;h5 id="镜像image和容器container讲docker-之前必须要提的两个词-镜像-and-容器">镜像（image）和容器（container）讲docker 之前必须要提的两个词 &lt;strong>镜像&lt;/strong> and &lt;strong>容器&lt;/strong>&lt;/h5>
+&lt;p>那么什么是镜像？什么又是容器呢？&lt;/p>
+&lt;h5 id="容器通俗来讲容器就是装东西的箱子你可以把它理解为-集装箱">容器通俗来讲容器就是装东西的箱子，你可以把它理解为 &lt;strong>集装箱&lt;/strong>&lt;/h5>
+&lt;p>容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>镜像是静态的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>一个镜像可以创建多个容器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="镜像你可以把镜像看成是我们电脑的里面的-软件安装包">镜像你可以把镜像看成是我们电脑的里面的 &lt;strong>软件安装包&lt;/strong>&lt;/h5>
+&lt;p>Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>容器是动态的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>镜像对于容器只是可读的。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="0x02搭建docker主要流程">0x02&lt;strong>搭建docker主要流程：&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>找镜像(search) -&amp;gt; 下镜像(pull) -&amp;gt; 查看镜像(images) -&amp;gt; 镜像中创建容器(run) -&amp;gt; 查看容器(ps)&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;p>我用的是centos7搭建的docker
+检查centos版本是否支持docker&lt;/p>
+&lt;p>1.查看内核版本 (是否大于3.10)
+&lt;code>uname -r&lt;/code>&lt;/p>
+&lt;p>2.安装docker
+&lt;code>yum -y install docker&lt;/code>
+安装最新版本
+&lt;code>yum -y install docker-ce&lt;/code>
+安装出现问题–&amp;gt;&lt;a href="https://blog.csdn.net/xixiworld/article/details/71438794">文章&lt;/a>&lt;/p>
+&lt;p>yum install docker-ce- (指定安装版本)&lt;/p>
+&lt;p>&lt;code>systemctl start docker&lt;/code> 开启docker
+&lt;code>systemctl enable docker&lt;/code> 开机启动
+&lt;code>docker version&lt;/code> 查看docker版本号&lt;/p>
+&lt;p>3.验证是否安装成功&lt;/p></description></item><item><title>about blog</title><link>https://www.fengx.eu.org/posts/20190601-about-blog/</link><pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190601-about-blog/</guid><description>&lt;h3 id="0x00前言">0x00&lt;strong>前言&lt;/strong>&lt;/h3>
+&lt;p>this is my first blog
+昨天花了一天时间终于把这个博客开通了，俗话说前人栽树后人乘凉，多亏了一些前辈分享的一些博客，才能这么快上手。不过在这中间还是遇到了许多的坑，可能这些小问题在大佬们看来都不屑去写，但是对于萌新的我来说，这些东西还是要慢慢的去摸索。话不多说，开始填坑。&lt;/p>
+&lt;h3 id="0x01首先介绍下博客的环境">0x01&lt;strong>首先介绍下博客的环境&lt;/strong>&lt;/h3>
+&lt;p>&lt;code>github+hexo+node.js&lt;/code> (我使用的是win)&lt;/p>
+&lt;p>&lt;strong>搭建过程&lt;/strong>
+前期搭建的具体过程我就不一一叙述了，网上的例子很多，这里贴两个我搭建过程中参考的文章。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.cnblogs.com/jackyroc/p/7681938.html">case1&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://fangzh.top/2018/2018090514/">case2&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="0x02简单的记一下一些错误">0x02简单的记一下一些错误&lt;/h3>
+&lt;h5 id="1找不到-sshcd-ssh">1.找不到 .ssh&lt;code>cd ~/.ssh&lt;/code>&lt;/h5>
+&lt;p>&lt;del>？？黑人问号？？ 百度了N遍都没讲到点子上，最后终于在一个老哥的CSDN的文章里找到了解决办法，这里记录一下&lt;/del>&lt;/p>
+&lt;p>&lt;strong>解决方法：&lt;/strong>
+这里其实就是因为我们是第一次使用，~目录里缺少 .ssh文件夹
+这时候我们该干嘛？ 当然是去&lt;strong>创建一个.ssh文件夹！&lt;/strong>&lt;/p>
+&lt;p>打开 Git Bash，输入如下命令，然后连续按三个回车即可：
+&lt;code>ssh-keygen -t rsa -C &amp;amp;quot;your_email@example.com&amp;amp;quot;&lt;/code>
+然后会出来提示Enter file in which to save the key
+后面是一个路径，你就会找到你想要的.ssh文件夹了，去电脑里找吧。&lt;/p>
+&lt;h5 id="2所有文章功能缺失解决方法">2.所有文章功能缺失&lt;strong>解决方法：&lt;/strong>&lt;/h5>
+&lt;p>在根目录_config.yml配置文件的最后插入以下代码&lt;/p>
+&lt;h2 id="0x03">0x03&amp;mdash;&lt;/h2>
+&lt;p>&lt;strong>域名&lt;/strong>&lt;/p>
+&lt;p>主要流程：&lt;/p>
+&lt;p>&lt;strong>购买域名 -&amp;gt; 实名认证 -&amp;gt; 域名解析 -&amp;gt; githubpage绑定域名&lt;/strong>&lt;/p>
+&lt;p>前两步没啥好说的，这里主要介绍下后面两步&lt;/p>
+&lt;hr>
+&lt;p>域名解析里 添加 A 记录 指向以下任意ip&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>source目录里新建一个文件 &lt;strong>CNAME&lt;/strong>
+&lt;code>echo unixcs.com&lt;/code>
+&lt;code>echo www.unixcs.com&lt;/code>&lt;/p></description></item><item><title>test</title><link>https://www.fengx.eu.org/posts/20190531-test/</link><pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190531-test/</guid><description>&lt;h2 id="测试-测试测试">测试### 测试测试&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>hey!hey!hey!&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>hey!hey!hey!&lt;/code>&lt;/p></description></item><item><title>Wfuzz初上手</title><link>https://www.fengx.eu.org/posts/20181027-wfuzz%E5%88%9D%E4%B8%8A%E6%89%8B/</link><pubDate>Sat, 27 Oct 2018 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20181027-wfuzz%E5%88%9D%E4%B8%8A%E6%89%8B/</guid><description>&lt;h2 id="wfuzz初上手-wfuzz是啥玩意wfuzz-是一款python开发的web安全模糊测试工具httpsgithubcomxmendezwfuzz">Wfuzz初上手### Wfuzz是啥玩意？wfuzz 是一款Python开发的Web安全模糊测试工具。&lt;a href="https://github.com/xmendez/wfuzz">https://github.com/xmendez/wfuzz&lt;/a>&lt;/h2>
+&lt;p>简单粗暴的功能特点记录：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>模块化 框架 可编写插件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>接口 可处理BurpSuite所抓的请求和响应报文&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>简而言之就是wfuzz可以用在做&lt;strong>请求参数参数类的模糊测试&lt;/strong>，也可以用来做&lt;strong>Web目录扫描&lt;/strong>等操作。&lt;/p>
+&lt;h3 id="wfuzz初体验">Wfuzz初体验&lt;/h3>
+&lt;ul>
+&lt;li>安装Wfuzz &lt;code>pip install wfuzz&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h4 id="简单的使用">简单的使用&amp;gt;&lt;/h4>
+&lt;p>wfuzz -w 字典 地址(e.g. &lt;a href="https://gh0st.cn/FUZZ">https://gh0st.cn/FUZZ&lt;/a>)&lt;/p>
+&lt;p>如上命令使用-w参数指定字典位置，然后跟上一个要测试的地址，所列的例子&lt;code>https://gh0st.cn/FUZZ&lt;/code>中有一个&lt;strong>FUZZ&lt;/strong>单词，这个单词可以理解是一个占位符，这样就大概了解了wfuzz的基本运行原理，它会读取字典然后传入占位符进行模糊测试请求。&lt;/p>
+&lt;p>实际的使用一遍：&lt;/p>
+&lt;p>返回结果如下：&lt;/p>
+&lt;p>通过返回结果我们可以知道很多信息，最需要关注的就是&lt;code>ID、Response、 Lines、Word、Chars、Payload&lt;/code>这一行，从左往右看，依次是&lt;strong>编号、响应状态码、响应报文行数、响应报文字数、响应报文正字符数、测试使用的Payload&lt;/strong>。&lt;/p>
+&lt;h4 id="了解wfuzz通过-h或者--help可以来获取帮助信息">了解Wfuzz通过&lt;code>-h&lt;/code>或者&lt;code>--help&lt;/code>可以来获取帮助信息。&lt;/h4>
+&lt;h5 id="wfuzz模块如上所述说到wfuzz是模块化的框架wfuzz默认自带很多模块模块分为5种类型分别是payloadsencodersiteratorsprinters和scripts">Wfuzz模块如上所述说到wfuzz是模块化的框架，wfuzz默认自带很多模块，模块分为5种类型分别是：&lt;code>payloads&lt;/code>、&lt;code>encoders&lt;/code>、&lt;code>iterators&lt;/code>、&lt;code>printers&lt;/code>和&lt;code>scripts&lt;/code>。&lt;/h5>
+&lt;p>通过&lt;code>-e&lt;/code>参数可以查看指定模块类型中的模块列表：&lt;/p>
+&lt;p>&lt;code>payloads&lt;/code>类的模块列表如下：&lt;/p>
+&lt;h4 id="wfuzz使用从上文知道了wfuzz基于一个非常简单的概念使用payload来替换相应的fuzz关键词的位置fuzz这样的关键词就是占位符payload就是输入源">Wfuzz使用从上文知道了wfuzz基于一个非常简单的概念：使用payload来替换相应的FUZZ关键词的位置，FUZZ这样的关键词就是&lt;code>占位符&lt;/code>，payload就是输入源。&lt;/h4>
+&lt;p>通过&lt;code>wfuzz -e payloads&lt;/code>可以获取payloads类的所有模块列表，使用&lt;code>wfuzz -z help&lt;/code>可以获取关于payloads类模块的详细信息，也可以通过&lt;code>--slice&lt;/code>参数来过滤返回信息的结果。&lt;/p>
+&lt;p>e.g. &lt;code>wfuzz -z help --slice &amp;amp;quot;names&amp;amp;quot;&lt;/code>&lt;/p>
+&lt;h5 id="使用字典注命令中的wordlist表示为字典位置">使用（字典）注：命令中的wordlist表示为字典位置&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>wfuzz -z file --zP fn=wordlist URL/FUZZ&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>wfuzz -z file,wordlist URL/FUZZ&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>wfuzz -w wordlist URL/FUZZ&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>这里有必要说明下，使用命令意义是一样的，都是使用&lt;code>payloads&lt;/code>模块类中的&lt;code>file&lt;/code>模块，通过&lt;code>wfuzz -z help --slice &amp;amp;quot;file&amp;amp;quot;&lt;/code>看如何使用&lt;code>file&lt;/code>模块：&lt;/p>
+&lt;p>通过返回的帮助信息，我们知道这个模块需要一个&lt;strong>参数fn&lt;/strong>，这个参数值为字典文件名（绝对路径）。这样子第一条命令一下子就明白了，&lt;code>wfuzz -z file --zP fn=wordlist URL/FUZZ&lt;/code>中的&lt;code>-z file&lt;/code>使用模块，&lt;code>--zP fn=wordlist&lt;/code>是定义&lt;strong>fn参数&lt;/strong>的值（可以这样理解，–zP 这里的P大写代表 Parameters ，然后其他的都是固有个事）&lt;/p></description></item></channel></rss>

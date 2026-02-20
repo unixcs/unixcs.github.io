@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Linux on Unixcs</title><link>https://www.fengx.eu.org/tags/linux/</link><description>Recent content in Linux on Unixcs</description><generator>Hugo -- 0.146.0</generator><language>zh-cn</language><lastBuildDate>Tue, 11 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fengx.eu.org/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker</title><link>https://www.fengx.eu.org/posts/20190611-docker/</link><pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190611-docker/</guid><description>&lt;h3 id="0x00前言">0x00&lt;strong>前言&lt;/strong>&lt;/h3>
+&lt;p>好久没更新博客了，感觉每天都在虚度光阴，要给自己指定一个学习计划，让自己忙起来！！
+记一下最近刚接触的doker吧，把笔记知识点汇总一下。&lt;/p>
+&lt;h3 id="0x01dcoker-是什么">0x01&lt;strong>Dcoker 是什么？？&lt;/strong>&lt;/h3>
+&lt;p>Docker的思想来自于&lt;code>集装箱&lt;/code>，集装箱解决了什么问题？
+在一艘大船上，可以把货物规整的摆放起来。
+并且各种各样的货物被集装箱标准化了，集装箱和集装箱之间不会互相影响。
+那么我就不需要专门运送水果的船和专门运送化学品的船了。
+只要这些货物在集装箱里封装的好好的，那我就可以用一艘大船把他们都运走。&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>还不懂什么是docker？那就看看这两个生动形象通俗易懂的例子吧
+&lt;a href="https://my.oschina.net/jamesview/blog/2994112">Case1&lt;/a>
+&lt;a href="https://www.jianshu.com/p/8cccc39c9f1c">Case2&lt;/a>&lt;/p>
+&lt;h5 id="镜像image和容器container讲docker-之前必须要提的两个词-镜像-and-容器">镜像（image）和容器（container）讲docker 之前必须要提的两个词 &lt;strong>镜像&lt;/strong> and &lt;strong>容器&lt;/strong>&lt;/h5>
+&lt;p>那么什么是镜像？什么又是容器呢？&lt;/p>
+&lt;h5 id="容器通俗来讲容器就是装东西的箱子你可以把它理解为-集装箱">容器通俗来讲容器就是装东西的箱子，你可以把它理解为 &lt;strong>集装箱&lt;/strong>&lt;/h5>
+&lt;p>容器好比软件集装箱，它内部可以安装任何软件和库文件，做任意的运行环境配置。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>镜像是静态的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>一个镜像可以创建多个容器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="镜像你可以把镜像看成是我们电脑的里面的-软件安装包">镜像你可以把镜像看成是我们电脑的里面的 &lt;strong>软件安装包&lt;/strong>&lt;/h5>
+&lt;p>Docker运行容器前需要本地存在对应的镜像，一个镜像可以创建多个容器，&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>容器是动态的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>镜像对于容器只是可读的。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="0x02搭建docker主要流程">0x02&lt;strong>搭建docker主要流程：&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>找镜像(search) -&amp;gt; 下镜像(pull) -&amp;gt; 查看镜像(images) -&amp;gt; 镜像中创建容器(run) -&amp;gt; 查看容器(ps)&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;p>我用的是centos7搭建的docker
+检查centos版本是否支持docker&lt;/p>
+&lt;p>1.查看内核版本 (是否大于3.10)
+&lt;code>uname -r&lt;/code>&lt;/p>
+&lt;p>2.安装docker
+&lt;code>yum -y install docker&lt;/code>
+安装最新版本
+&lt;code>yum -y install docker-ce&lt;/code>
+安装出现问题–&amp;gt;&lt;a href="https://blog.csdn.net/xixiworld/article/details/71438794">文章&lt;/a>&lt;/p>
+&lt;p>yum install docker-ce- (指定安装版本)&lt;/p>
+&lt;p>&lt;code>systemctl start docker&lt;/code> 开启docker
+&lt;code>systemctl enable docker&lt;/code> 开机启动
+&lt;code>docker version&lt;/code> 查看docker版本号&lt;/p>
+&lt;p>3.验证是否安装成功&lt;/p></description></item></channel></rss>

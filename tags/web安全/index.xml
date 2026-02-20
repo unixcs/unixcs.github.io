@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Web安全 on Unixcs</title><link>https://www.fengx.eu.org/tags/web%E5%AE%89%E5%85%A8/</link><description>Recent content in Web安全 on Unixcs</description><generator>Hugo -- 0.146.0</generator><language>zh-cn</language><lastBuildDate>Thu, 27 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fengx.eu.org/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>宽字节注入</title><link>https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/</link><pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190627-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5/</guid><description>&lt;h4 id="前言如何解决-注入时-输入的---39单引号--被转义成--39反斜杠单引号">前言如何解决 注入时 输入的    &lt;code>&amp;amp;#39;&lt;/code>(单引号)    被转义成    &lt;code>\&amp;amp;#39;&lt;/code>(反斜杠+单引号)&lt;/h4>
+&lt;ul>
+&lt;li>首先我们来看一下sql注入中遇到的问题&lt;/li>
+&lt;/ul>
+&lt;p>遇到这种情况，说明单引号在插入时被转义了，那么如何去bypass？&lt;/p>
+&lt;ul>
+&lt;li>使用宽字节注入，把单引号前的\给消除掉，这样就可以正常使用单引号去闭合了&lt;/li>
+&lt;/ul>
+&lt;p>这里使用的方法是在单引号前面加上**%df**。&lt;/p>
+&lt;p>关于为什么要加上%df就可以宽字节注入了呢？请听我娓娓道来~&lt;/p>
+&lt;p>单引号前被插入了 \ 说明php源码代码中出现了以下函数，那么首先我们要了解一下这些函数。&lt;/p>
+&lt;h4 id="php转义函数">PHP转义函数&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>addslashes，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>mysql_real_escape_string，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>mysql_escape_string&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="宽字节注入条件">宽字节注入条件：&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>使用addslashes函数 (并且开启GPC)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据库编码设置为GBK (php编码为 utf-8 或其它非GBK格式)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="宽字节注入流程">宽字节注入流程：&lt;/h4>
+&lt;ul>
+&lt;li>正常被转义：&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>‘&lt;/strong>          –&amp;gt;            &lt;strong>\‘&lt;/strong>          (单引号 -&amp;gt; 反斜杠+单引号)&lt;/p>
+&lt;ul>
+&lt;li>加%df 宽字节注入过滤:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>%df’&lt;/strong>    –&amp;gt;   &lt;strong>%df%27%&lt;/strong> –&amp;gt;   &lt;strong>%df%5c%27&lt;/strong>    –&amp;gt;   &lt;strong>運’&lt;/strong>&lt;/p>
+&lt;p>浏览器输入 –&amp;gt; url编码     –&amp;gt; addslashes转义    –&amp;gt; %df%5c被转义成汉字 &lt;code>運&lt;/code>&lt;/p>
+&lt;h4 id="宽字节注入原理">宽字节注入原理：&lt;/h4>
+&lt;p>%df%5c 为什么会被转义成为汉字 &lt;code>運&lt;/code> 呢？&lt;/p>
+&lt;p>%df’经过addslashes编码之后带入了‘\’&lt;/p>
+&lt;p>%df’ 就变成了 %df' –&amp;gt; %df%5c%27 (url编码后)&lt;/p>
+&lt;p>%df%5c%27 在带入到mysql时使用了GBK，%df%5c被转译成汉字&lt;code>運&lt;/code> so最后输出结果为 &lt;code>運&amp;amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>讲到GBK编码转义 为什么%df%5c%27 只转义%5c而不转义%27 呢?&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>GBK编码，它的编码范围是0x8140~0xFEFE（不包括xx7F），
+在遇到 %df(ascii(223)) &amp;gt; ascii(128) 时自动拼接%5c，
+因此吃掉‘\’，而%27、%20小于ascii(128)的字符就保留了。&lt;/p></description></item></channel></rss>

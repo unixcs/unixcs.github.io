@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tools on Unixcs</title><link>https://www.fengx.eu.org/tags/tools/</link><description>Recent content in Tools on Unixcs</description><generator>Hugo -- 0.146.0</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fengx.eu.org/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Windous下Wfuzz的安装</title><link>https://www.fengx.eu.org/posts/20190613-windous%E4%B8%8Bwfuzz%E7%9A%84%E5%AE%89%E8%A3%85/</link><pubDate>Thu, 13 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.fengx.eu.org/posts/20190613-windous%E4%B8%8Bwfuzz%E7%9A%84%E5%AE%89%E8%A3%85/</guid><description>&lt;h3 id="0x00前言">0x00&lt;strong>前言&lt;/strong>&lt;/h3>
+&lt;p>wfuzz这个工具在kali下是默认安装的~ 可是由于虚拟机用kali总是有种卡卡的感觉，就想着在windous下也装一个。
+其实之前我尝试安装过几次，因为没学过python，就一直没有装成功。。&lt;del>还是因为自己菜&lt;/del>
+终于！！！趁着今天下午没事，在 你好表哥 的帮助下~ 终于把这个史诗级的难题给solve了&lt;/p>
+&lt;hr>
+&lt;p>关于wfuzz的安装这里介绍&lt;strong>两种方法&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>基于python2.7环境安装&lt;/li>
+&lt;/ul>
+&lt;p>exe版 免python环境，打开即用！！ &lt;del>早知道有这个版本,我TM还费那么大劲去配置那些看着就脑壳疼的环境干嘛！&lt;/del>&lt;/p>
+&lt;p>0x01  &lt;strong>基于python2.7环境安装wufzz&lt;/strong>首先你要有python2.7+pip的环境，这里环境的安装就不多介绍了~ 直接进入正题&lt;/p>
+&lt;p>&lt;a href="https://github.com/xmendez/wfuzz/archive/v2.3.4.tar.gz">下载wfuzz&lt;/a>&lt;/p>
+&lt;p>cmd进入文件根目录 &lt;code>cd wfuzz-2.3.4&lt;/code>&lt;/p>
+&lt;p>①&lt;code>setup.py install&lt;/code>&lt;/p>
+&lt;p>②&lt;code>pip install -r requirements.txt&lt;/code>&lt;/p>
+&lt;p>③&lt;code>pip install wfuzz&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;p>① setup.py是&lt;strong>安装程序&lt;/strong>
+② requirements.txt 文件是python项目中必须包含一个文件用于记录所有依赖包及其精确的版本号用以新环境部署。&lt;strong>这里是安装依赖包&lt;/strong>
+③ &lt;strong>安装wfuzz&lt;/strong>&lt;/p>
+&lt;p>到这里wfuzz就安装成功了，如何去验证是否安装成功呢？&lt;/p>
+&lt;p>在cmd下输入&lt;code>wfuzz&lt;/code>&lt;/p>
+&lt;p>0x02  &lt;strong>exe版本的安装&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>下载
+&lt;a href="https://github.com/xmendez/wfuzz/releases/download/v2.1-beta/wfuzz_2.1_windows.zip">下载wfuzz&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>打开&lt;/p>
+&lt;ul>
+&lt;li>运行&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,0 +1,95 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>不死马 | Unixcs</title>
+<meta name=keywords content="awd"><meta name=description content="什么是不死马？内存马，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。
+生成过程不死马.php  →  上传到server  →  server执行文件  →  server本地无限循环生成 (一句话.php)
+两种不死马
+
+
+网上流传的不死马
+
+
+ignore_user_abort(true);
+函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。
+
+
+set_time_limit()
+函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。
+
+
+unlink(__FILE__)
+删除文件本身，以起到隐蔽自身的作用。
+
+
+while
+循环内每隔usleep(5000)即写新的后门文件
+
+
+system()
+执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。
+
+
+升级版
+
+
+网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 ,
+那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.
+正确的姿势应该是这样 :
+参考:https://xz.aliyun.com/t/1530/
+https://blog.csdn.net/ski_12/article/details/84920127
+拓展#### 一句话木马参考：https://www.uedbox.com/post/6051/"><meta name=author content="Unixcs"><link rel=canonical href=https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://www.fengx.eu.org/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://www.fengx.eu.org/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://www.fengx.eu.org/favicon-32x32.png><link rel=apple-touch-icon href=https://www.fengx.eu.org/apple-touch-icon.png><link rel=mask-icon href=https://www.fengx.eu.org/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/"><meta property="og:site_name" content="Unixcs"><meta property="og:title" content="不死马"><meta property="og:description" content="什么是不死马？内存马，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。 生成过程不死马.php → 上传到server → server执行文件 → server本地无限循环生成 (一句话.php) 两种不死马 网上流传的不死马
+ignore_user_abort(true); 函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。
+set_time_limit() 函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。
+unlink(__FILE__) 删除文件本身，以起到隐蔽自身的作用。
+while 循环内每隔usleep(5000)即写新的后门文件
+system() 执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。
+升级版
+网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 , 那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.
+正确的姿势应该是这样 :
+参考:https://xz.aliyun.com/t/1530/ https://blog.csdn.net/ski_12/article/details/84920127
+拓展#### 一句话木马参考：https://www.uedbox.com/post/6051/"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-08-05T00:00:00+00:00"><meta property="article:modified_time" content="2019-08-05T00:00:00+00:00"><meta property="article:tag" content="Awd"><meta name=twitter:card content="summary"><meta name=twitter:title content="不死马"><meta name=twitter:description content="什么是不死马？内存马，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。
+生成过程不死马.php  →  上传到server  →  server执行文件  →  server本地无限循环生成 (一句话.php)
+两种不死马
+
+
+网上流传的不死马
+
+
+ignore_user_abort(true);
+函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。
+
+
+set_time_limit()
+函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。
+
+
+unlink(__FILE__)
+删除文件本身，以起到隐蔽自身的作用。
+
+
+while
+循环内每隔usleep(5000)即写新的后门文件
+
+
+system()
+执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。
+
+
+升级版
+
+
+网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 ,
+那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.
+正确的姿势应该是这样 :
+参考:https://xz.aliyun.com/t/1530/
+https://blog.csdn.net/ski_12/article/details/84920127
+拓展#### 一句话木马参考：https://www.uedbox.com/post/6051/"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.fengx.eu.org/posts/"},{"@type":"ListItem","position":2,"name":"不死马","item":"https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"不死马","name":"不死马","description":"什么是不死马？内存马，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。 生成过程不死马.php → 上传到server → server执行文件 → server本地无限循环生成 (一句话.php) 两种不死马 网上流传的不死马\nignore_user_abort(true); 函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。\nset_time_limit() 函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。\nunlink(__FILE__) 删除文件本身，以起到隐蔽自身的作用。\nwhile 循环内每隔usleep(5000)即写新的后门文件\nsystem() 执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。\n升级版\n网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 , 那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.\n正确的姿势应该是这样 :\n参考:https://xz.aliyun.com/t/1530/ https://blog.csdn.net/ski_12/article/details/84920127\n拓展#### 一句话木马参考：https://www.uedbox.com/post/6051/","keywords":["awd"],"articleBody":"什么是不死马？内存马，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。 生成过程不死马.php → 上传到server → server执行文件 → server本地无限循环生成 (一句话.php) 两种不死马 网上流传的不死马\nignore_user_abort(true); 函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。\nset_time_limit() 函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。\nunlink(__FILE__) 删除文件本身，以起到隐蔽自身的作用。\nwhile 循环内每隔usleep(5000)即写新的后门文件\nsystem() 执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。\n升级版\n网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 , 那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.\n正确的姿势应该是这样 :\n参考:https://xz.aliyun.com/t/1530/ https://blog.csdn.net/ski_12/article/details/84920127\n拓展#### 一句话木马参考：https://www.uedbox.com/post/6051/ ","wordCount":"39","inLanguage":"zh-cn","datePublished":"2019-08-05T00:00:00Z","dateModified":"2019-08-05T00:00:00Z","author":{"@type":"Person","name":"Unixcs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fengx.eu.org/posts/20190805-%E4%B8%8D%E6%AD%BB%E9%A9%AC/"},"publisher":{"@type":"Organization","name":"Unixcs","logo":{"@type":"ImageObject","url":"https://www.fengx.eu.org/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://www.fengx.eu.org/ accesskey=h title="Unixcs (Alt + H)">Unixcs</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">不死马</h1><div class=post-meta><span title='2019-08-05 00:00:00 +0000 UTC'>August 5, 2019</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>39 words</span>&nbsp;·&nbsp;<span>Unixcs</span></div></header><div class=post-content><h3 id=什么是不死马内存马通俗讲就是不死马就是会运行一段永远不退出的程序常驻在php进程里无限执行>什么是不死马？<strong>内存马</strong>，通俗讲就是不死马，就是会运行一段永远不退出的程序常驻在PHP进程里，无限执行。<a hidden class=anchor aria-hidden=true href=#什么是不死马内存马通俗讲就是不死马就是会运行一段永远不退出的程序常驻在php进程里无限执行>#</a></h3><h3 id=生成过程不死马php----上传到server----server执行文件----server本地无限循环生成-一句话php>生成过程不死马.php → 上传到server → server执行文件 → server本地无限循环生成 (一句话.php)<a hidden class=anchor aria-hidden=true href=#生成过程不死马php----上传到server----server执行文件----server本地无限循环生成-一句话php>#</a></h3><h3 id=两种不死马>两种不死马<a hidden class=anchor aria-hidden=true href=#两种不死马>#</a></h3><ul><li><p>网上流传的不死马</p></li><li><p><code>ignore_user_abort(true);</code>
+函数设置与客户机断开是否会终止脚本的执行。这里设置为true则忽略与用户的断开，即使与客户机断开脚本仍会执行。</p></li><li><p><code>set_time_limit()</code>
+函数设置脚本最大执行时间。这里设置为0，即没有时间方面的限制。</p></li><li><p><code>unlink(__FILE__)</code>
+删除文件本身，以起到隐蔽自身的作用。</p></li><li><p><code>while</code>
+循环内每隔usleep(5000)即写新的后门文件</p></li><li><p><code>system()</code>
+执行的命令用于修改文件的创建或修改时间，可以绕过“find –name '*.php' –mmin -10”命令检测最近10分钟修改或新创建的PHP文件，但不一定有用，可选。</p></li><li><p>升级版</p></li></ul><p>网上流传的不死马, while 里面只是并没有判断了这个文件是不是存在 ,
+那么我只需要把这个文件中的 shell 注释掉就可以绕过你的内存木马了.</p><p>正确的姿势应该是这样 :</p><p>参考:<a href=https://xz.aliyun.com/t/1530/>https://xz.aliyun.com/t/1530/</a>
+<a href=https://blog.csdn.net/ski_12/article/details/84920127>https://blog.csdn.net/ski_12/article/details/84920127</a></p><h3 id=拓展-一句话木马参考httpswwwuedboxcompost6051>拓展#### 一句话木马参考：<a href=https://www.uedbox.com/post/6051/>https://www.uedbox.com/post/6051/</a><a hidden class=anchor aria-hidden=true href=#拓展-一句话木马参考httpswwwuedboxcompost6051>#</a></h3></div><footer class=post-footer><ul class=post-tags><li><a href=https://www.fengx.eu.org/tags/awd/>Awd</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2026 <a href=https://www.fengx.eu.org/>Unixcs</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

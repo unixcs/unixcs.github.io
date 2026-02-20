@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.fengx.eu.org/sitemap.xml
