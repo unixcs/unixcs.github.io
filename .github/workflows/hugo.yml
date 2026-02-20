@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -27,16 +29,8 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        run: |
-          # 复制静态资源
-          cp -r css js assets public/
-          # 部署
-          cd public
-          git init
-          git config --global user.name "unixcs"
-          git config --global user.email "fengx@fengx.eu.org"
-          git add -A
-          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')" || echo "Nothing to commit"
-          echo "Pushing to master..."
-          git push -f git@github.com:unixcs/unixcs.github.io.git HEAD:master 2>&1
-          echo "Done"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
