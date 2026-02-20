@@ -45,17 +45,17 @@ params:
     - name: x
       url: "https://x.com/unixcs"
   
-  # Profile Mode - 显示个人简介在中央
+  # 禁用 Profile Mode，显示文章列表
   profileMode:
-    enabled: true
-    title: "Unixcs"
-    subtitle: "Be the Master of Time!"
-    imageUrl: "/assets/header.jpg"
-    imageWidth: 120
-    imageHeight: 120
+    enabled: false
 
   # 启用搜索
   enableSearch: true
+
+  fuseOpts:
+    isCaseSensitive: false
+    includeScore: true
+    threshold: 0.3
 
 markup:
   highlight:
