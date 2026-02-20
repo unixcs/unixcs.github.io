@@ -25,19 +25,15 @@ jobs:
           npm install
           npm install -g hexo
 
-      - name: Generate Static Files
+      - name: Generate and Deploy
         run: |
           hexo clean
           hexo g
           cp -r css js assets public/
-
-      - name: Deploy to GitHub
-        env:
-          GIT_SSH_COMMAND: 'ssh -o StrictHostKeyChecking=no'
-        run: |
           cd public
+          git init
           git config --global user.name "unixcs"
           git config --global user.email "fengx@fengx.eu.org"
           git add .
-          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')" || true
-          git push -u git@github.com:unixcs/unixcs.github.io.git master --force
+          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')"
+          git push -f -u git@github.com:unixcs/unixcs.github.io.git master
