@@ -28,10 +28,13 @@ jobs:
 
       - name: Deploy
         run: |
+          # 复制静态资源
+          cp -r css js assets public/
+          # 部署
           cd public
           git init
           git config --global user.name "unixcs"
           git config --global user.email "fengx@fengx.eu.org"
-          git add .
+          git add -A
           git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')"
           git push -f -q git@github.com:unixcs/unixcs.github.io.git HEAD:master
