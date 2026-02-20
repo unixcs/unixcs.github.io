@@ -3,7 +3,8 @@ languageCode: "zh-cn"
 title: "Unixcs"
 theme: "hugo-PaperMod"
 
-paginate: 10
+pagination:
+  pagerSize: 10
 
 languages:
   zh-cn:
