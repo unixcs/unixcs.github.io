@@ -1,0 +1,24 @@
+<article class='ContentView'>
+    <header class='PageTitle'>
+        <h1><%- page.title %></h1>
+    </header>
+    <section>
+      <%- page.content %>
+    </section>
+    <section class='ArticleMeta'>
+        <div>
+          发布于&nbsp;
+          <time datetime="<%= page.date.toISOString() %>" itemprop="datePublished">
+            <%= date(page.date, 'YYYY-MM-DD') %>
+          </time>
+        </div>
+        <% if (page.tags && page.tags.length) { %>
+        <div>
+          标签: 
+          <% page.tags.forEach(function(tag) { %>
+            <a href="<%= tag.permalink %>"><%= tag.name %></a>
+          <% }); %>
+        </div>
+        <% } %>
+    </section>
+</article>

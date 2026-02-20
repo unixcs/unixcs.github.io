@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= page.title %> | <%= config.title %></title>
+  <link rel="icon" href="/assets/2.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="Shell">
+    <aside class='SideBar'>
+    <section class='avatar' style="background-image: url(/assets/background.png)">
+        <div class='av-pic' style="background-image: url(/assets/header.jpg)">
+        </div>
+    </section>
+    <section class='menu'>
+        <div><%= config.title %></div>
+        <div><%= config.subtitle %></div>
+        <ul>
+          <a href="/" class="Btn"><li>Home</li></a>
+          <a href="/archives/" class="Btn"><li>Archive</li></a>
+          <a href="/tags/" class="Btn"><li>Tags</li></a>
+          <a href="/about" class="Btn"><li>About</li></a>
+        </ul>
+    </section>
+    <section class="media">
+        <a href="https://github.com/unixcs"><img src="/assets/github.svg" /></a>
+    </section>
+</aside>
+    <div class="container">
+        <div data-pager-shell>
+            <div>
+  <%- body %>
+            </div>
+            <footer>
+    <div>© <%= theme.since %> - <%= date(new Date(), 'YYYY') %> <%= config.author %> </div>
+</footer>
+        </div>
+    </div>
+</div>
+<script src="/js/pager/dist/singlepager.js"></script>
+<script>
+var sp = new Pager('data-pager-shell')
+</script>
+</body>
+</html>
