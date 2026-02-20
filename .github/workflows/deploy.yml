@@ -23,6 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
+          npm install -g hexo
 
       - name: Generate Static Files
         run: |
