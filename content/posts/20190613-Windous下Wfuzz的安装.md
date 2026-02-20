@@ -1,7 +1,7 @@
 ---
-title: Windous下Wfuzz的安装
-date: 2019-06-13T12:07:54.000Z
-tags: Tools
+title: "Windous下Wfuzz的安装"
+date: 2019-06-13
+tags: ["Tools"]
 ---
 
 ### 0x00**前言**

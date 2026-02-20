@@ -1,0 +1,52 @@
+baseURL: "https://www.fengx.eu.org/"
+languageCode: "zh-cn"
+title: "Unixcs"
+theme: "hugo-PaperMod"
+
+paginate: 10
+
+languages:
+  zh-cn:
+    languageName: "中文"
+    weight: 1
+
+defaultContentLanguage: zh-cn
+
+enableRobotsTXT: true
+enableGitInfo: false
+
+timeout: "120s"
+
+params:
+  env: production
+  description: "Be the Master of Time!"
+  author: "Unixcs"
+  authorUrl: "https://github.com/unixcs"
+  
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  showCodeCopyButtons: true
+  showReadingTime: true
+  showWordCount: true
+  
+  socialIcons:
+    - name: github
+      url: "https://github.com/unixcs"
+  
+  profileMode:
+    enabled: true
+    title: "Unixcs"
+    subtitle: "Be the Master of Time!"
+    imageUrl: "/assets/header.jpg"
+    imageWidth: 120
+    imageHeight: 120
+
+  homeInfoParams:
+    Title: "Unixcs"
+    Content: "Be the Master of Time!"
+
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true

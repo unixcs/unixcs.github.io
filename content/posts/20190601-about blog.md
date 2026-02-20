@@ -1,7 +1,7 @@
 ---
-title: about blog
-date: 2019-06-01T05:15:17.000Z
-tags: blog
+title: "about blog"
+date: 2019-06-01
+tags: ["blog"]
 ---
 
 ### 0x00**前言**

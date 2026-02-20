@@ -1,0 +1,16 @@
+---
+title: "Obsidian同步方法"
+date: 2026-02-20
+tags: ["工具", "Obsidian"]
+categories: ["笔记"]
+---
+
+Obsidian的安卓和Win 10端同步的一个方法。
+
+首先准备工作，安卓手机，OneDrive账号。
+
+1. 安卓手机下载Flowd Sync软件。在里面登录你的OneDrive账号，并且验证密钥，粘贴进去。
+2. 安卓手机打开Obsidian的软件，在第三方浏览插件中搜索关键词Remotely save，添加插件后，在里面登录OneDrive账号。
+3. 如果笔记在安卓端、电脑端数据为空，首次设置为增量推送。
+4. 电脑端打开Obsidian软件，添加库的地址为OneDrive里的ob同步地址。
+5. 最后回到安卓端，修改同步设置为双向同步。另外可以单独设置同步为每次打开后。
