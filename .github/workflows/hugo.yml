@@ -36,5 +36,7 @@ jobs:
           git config --global user.name "unixcs"
           git config --global user.email "fengx@fengx.eu.org"
           git add -A
-          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')"
-          git push -f -q git@github.com:unixcs/unixcs.github.io.git HEAD:master
+          git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')" || echo "Nothing to commit"
+          echo "Pushing to master..."
+          git push -f git@github.com:unixcs/unixcs.github.io.git HEAD:master 2>&1
+          echo "Done"
